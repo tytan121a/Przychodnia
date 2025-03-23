@@ -1,4 +1,6 @@
-﻿using System;
+﻿using przychodnia3.models;
+using przychodnia3.respositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,85 @@ namespace przychodnia3
 {
     public partial class UserEdit : Form
     {
-        public UserEdit()
+        private User user1;
+        public UserEdit(User user1)
         {
             InitializeComponent();
+            this.user1 = user1;
+
+            this.plec.Items.Add("Mezczyzna");
+            this.plec.Items.Add("Kobieta");
+
+            this.rola.Items.Add("Pacjent");
+            this.rola.Items.Add("Recepcjonista");
+            this.rola.Items.Add("Admin");
+
+            EditUser(user1);
         }
+        public void EditUser(User user)
+        {
+            var repoAddress = new AddressRespository();
+            Adres userAdres = repoAddress.GetAddress(user.IdAdresu);
+           
+            this.login.Text = user.Login;
+            this.haslo.Text = user.Haslo;
+            this.imie.Text = user.Imie;
+            this.nazwisko.Text = user.Nazwisko;
+            this.pesel.Text = user.Pesel;
+            this.dataUrodzenia.Value = user.DataUrodzenia;
+            this.email.Text = user.Email;
+            this.numerTelefonu.Text = user.NrTelefonu;
+            
+            this.miejscowosc.Text = userAdres.Miejscowosc;
+            this.kodPocztowy.Text = userAdres.KodPocztowy;
+            this.ulica.Text = userAdres.Ulica;
+            this.numerPosesji.Text = userAdres.NrPosesji;
+            this.numerLokalu.Text = userAdres.NrLokalu;
+
+            var repoGender = new GenderRespository();
+            this.plec.Text = repoGender.GetGenderName(user.IdPlci);
+
+            var repoRole = new RoleRespository();
+            this.rola.Text = repoRole.GetRoleName(user.IdRoli);
+
+        }
+        private void Zapisz_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.IdUzytkownika = user1.IdUzytkownika;
+            user.Login = this.login.Text;
+            user.Haslo = this.haslo.Text;
+            user.Imie = this.imie.Text;
+            user.Nazwisko = this.nazwisko.Text;
+
+            var repoAddress = new AddressRespository();
+            repoAddress.UpdateAddress(user1.IdAdresu, this.miejscowosc.Text, this.kodPocztowy.Text, this.ulica.Text, this.numerPosesji.Text, this.numerLokalu.Text);
+
+            user.Pesel = this.pesel.Text;
+            user.DataUrodzenia = this.dataUrodzenia.Value;
+
+            var repoGender = new GenderRespository();
+            user.IdPlci = repoGender.GetGenderId(this.plec.Text);
+            
+            user.Email = this.email.Text;
+            user.NrTelefonu = this.numerTelefonu.Text;
+
+            var repoRole = new RoleRespository();
+            user.IdRoli = repoRole.GetRoleId(this.rola.Text);
+
+
+            var repo = new UserRespository();
+            repo.UpdateUser(user);
+
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void Anuluj_Click(object sender, EventArgs e)
+        {
+
+            this.DialogResult = DialogResult.Cancel;
+
+        }
+       
     }
 }

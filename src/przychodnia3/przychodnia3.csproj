@@ -160,6 +160,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="respositories\AddressRespository.cs" />
+    <Compile Include="respositories\GenderRespository.cs" />
+    <Compile Include="respositories\RoleRespository.cs" />
     <Compile Include="UserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
