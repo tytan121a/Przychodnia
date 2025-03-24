@@ -41,7 +41,7 @@ namespace przychodnia3
 
                 row["ID"] = user.IdUzytkownika;
                 row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
-                row["Data Urodzenia"] = user.DataUrodzenia;
+                row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
                 row["Email"] = user.Email;
                 row["Numer Telefonu"] = user.NrTelefonu;
 
@@ -80,7 +80,7 @@ namespace przychodnia3
 
                 row["ID"] = user.IdUzytkownika;
                 row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
-                row["Data Urodzenia"] = user.DataUrodzenia;
+                row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
                 row["Email"] = user.Email;
                 row["Numer Telefonu"] = user.NrTelefonu;
 

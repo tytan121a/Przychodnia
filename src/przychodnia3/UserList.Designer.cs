@@ -95,6 +95,7 @@
             // 
             // listaUzytkownikow
             // 
+            this.listaUzytkownikow.AllowUserToAddRows = false;
             this.listaUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -123,7 +124,7 @@
             this.Controls.Add(this.wyszukajText);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserList";
-            this.Text = "Form1";
+            this.Text = "Uzytkownicy";
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
