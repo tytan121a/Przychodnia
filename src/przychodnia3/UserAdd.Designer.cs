@@ -335,6 +335,7 @@
             this.haslo.Name = "haslo";
             this.haslo.Size = new System.Drawing.Size(236, 20);
             this.haslo.TabIndex = 41;
+            this.haslo.UseSystemPasswordChar = true;
             // 
             // plec
             // 

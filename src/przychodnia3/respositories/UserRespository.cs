@@ -120,8 +120,6 @@ namespace przychodnia3.respositories
                     string sql = "INSERT INTO Tbl_Uzytkownicy (Login, Haslo, Imie, Nazwisko, IdAdresu, Pesel, DataUrodzenia, IdPlci, Email, NrTelefonu, CzyZapomniany, DataZapomnienia, KtoZapomnial, IdRoli) VALUES (@Login, @Haslo, @Imie, @Nazwisko, @IdAdresu, @Pesel, @DataUrodzenia, @IdPlci, @Email, @NrTelefonu, 0, null, null, @IdRoli)";
 
 
-
-
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
                         command.Parameters.AddWithValue("@Login", user.Login);
@@ -160,8 +158,6 @@ namespace przychodnia3.respositories
                 {
                     conn.Open();
                     string sql = "UPDATE Tbl_Uzytkownicy SET Login=@Login, Haslo=@Haslo, Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id";
-
-
 
 
                     using (SqlCommand command = new SqlCommand(sql, conn))

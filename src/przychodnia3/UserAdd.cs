@@ -23,16 +23,13 @@ namespace przychodnia3
             this.plec.Items.Add("Mężczyzna");
             this.plec.Items.Add("Kobieta");
 
-            this.rola.Items.Add("Pacjent");
+            
             this.rola.Items.Add("Recepcjonista");
             this.rola.Items.Add("Admin");
 
         }
 
-        private void dataUrodzenia_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private bool ValidateInput()
         {
@@ -120,38 +117,31 @@ namespace przychodnia3
             repoAdres.CreateAddress(adres);
 
             int addressID = repoAdres.GetAddressId(adres.Miejscowosc, adres.KodPocztowy, adres.Ulica, adres.NrPosesji, adres.NrLokalu);
-            if(addressID != -1)
-            {
-                User user = new User();
-                user.Login = this.login.Text;
-                user.Haslo = this.haslo.Text;
-                user.Imie = this.imie.Text;
-                user.Nazwisko = this.nazwisko.Text;
-                user.IdAdresu = addressID;
-                user.Pesel = this.pesel.Text;
-                user.DataUrodzenia = this.dataUrodzenia.Value;
-
-                var repoGender = new GenderRespository();
-                user.IdPlci = repoGender.GetGenderId(this.plec.Text);
-
-                user.Email = this.email.Text;
-                user.NrTelefonu = this.numerTelefonu.Text;
-                
-                var repoRole = new RoleRespository();
-                user.IdRoli = repoRole.GetRoleId(this.rola.Text);
-
-
-                var repo = new UserRespository();
-                repo.CreateUser(user);
-
-                this.DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                return;
-            }
-
+            if (addressID != -1) return;
             
+            User user = new User();
+            user.Login = this.login.Text;
+            user.Haslo = this.haslo.Text;
+            user.Imie = this.imie.Text;
+            user.Nazwisko = this.nazwisko.Text;
+            user.IdAdresu = addressID;
+            user.Pesel = this.pesel.Text;
+            user.DataUrodzenia = this.dataUrodzenia.Value;
+
+            var repoGender = new GenderRespository();
+            user.IdPlci = repoGender.GetGenderId(this.plec.Text);
+
+            user.Email = this.email.Text;
+            user.NrTelefonu = this.numerTelefonu.Text;
+                
+            var repoRole = new RoleRespository();
+            user.IdRoli = repoRole.GetRoleId(this.rola.Text);
+
+
+            var repo = new UserRespository();
+            repo.CreateUser(user);
+
+            this.DialogResult = DialogResult.OK;        
         }
 
         private void Anuluj_Click(object sender, EventArgs e)
@@ -161,7 +151,19 @@ namespace przychodnia3
 
         }
 
+
+
+
+
+
+
+
+
         private void numerTelefonu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dataUrodzenia_ValueChanged(object sender, EventArgs e)
         {
 
         }

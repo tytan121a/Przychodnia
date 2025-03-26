@@ -25,7 +25,7 @@ namespace przychodnia3
         private void ReadUsers()
         {
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("Numer pacjenta");
             dataTable.Columns.Add("Użytkownik");
             dataTable.Columns.Add("Data Urodzenia");
             dataTable.Columns.Add("Email");
@@ -35,11 +35,11 @@ namespace przychodnia3
             var users = repo.GetUsers();
 
 
-            foreach( var user in users)
+            foreach (var user in users)
             {
                 var row = dataTable.NewRow();
 
-                row["ID"] = user.IdUzytkownika;
+                row["Numer pacjenta"] = user.IdUzytkownika;
                 row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
                 row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
                 row["Email"] = user.Email;
@@ -50,6 +50,7 @@ namespace przychodnia3
             this.listaUzytkownikow.DataSource = dataTable;
         }
 
+
         private void button1_Click(object sender, EventArgs e)
         {
             AddUser form = new AddUser();
@@ -59,41 +60,9 @@ namespace przychodnia3
             }
         }
 
-        private void wyszukajButton_Click(object sender, EventArgs e)
-        {
 
 
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("ID");
-            dataTable.Columns.Add("Użytkownik");
-            dataTable.Columns.Add("Data Urodzenia");
-            dataTable.Columns.Add("Email");
-            dataTable.Columns.Add("Numer Telefonu");
-
-            string searchText = wyszukajText.Text.Trim();
-            var repo = new UserRespository();
-            var users = repo.SearchUsers(searchText);
-
-            foreach (var user in users)
-            {
-                var row = dataTable.NewRow();
-
-                row["ID"] = user.IdUzytkownika;
-                row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
-                row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
-                row["Email"] = user.Email;
-                row["Numer Telefonu"] = user.NrTelefonu;
-
-                dataTable.Rows.Add(row);
-            }
-            listaUzytkownikow.DataSource = dataTable;
-            
-        }
-
-        private void wyszukajText_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void edytujUzytkownikow_Click(object sender, EventArgs e)
         {
@@ -111,6 +80,45 @@ namespace przychodnia3
 
                 ReadUsers();
             }
+        }
+
+        private void wyszukajButton_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Numer pacjenta");
+            dataTable.Columns.Add("Użytkownik");
+            dataTable.Columns.Add("Data Urodzenia");
+            dataTable.Columns.Add("Email");
+            dataTable.Columns.Add("Numer Telefonu");
+
+            string searchText = wyszukajText.Text.Trim();
+            var repo = new UserRespository();
+            var users = repo.SearchUsers(searchText);
+
+            foreach (var user in users)
+            {
+                var row = dataTable.NewRow();
+
+                row["Numer pacjenta"] = user.IdUzytkownika;
+                row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
+                row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
+                row["Email"] = user.Email;
+                row["Numer Telefonu"] = user.NrTelefonu;
+
+                dataTable.Rows.Add(row);
+            }
+            listaUzytkownikow.DataSource = dataTable;
+
+        }
+
+        private void wyszukajText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaUzytkownikow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

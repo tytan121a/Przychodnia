@@ -17,7 +17,7 @@ namespace przychodnia3
             this.plec.Items.Add("Mężczyzna");
             this.plec.Items.Add("Kobieta");
 
-            this.rola.Items.Add("Pacjent");
+            
             this.rola.Items.Add("Recepcjonista");
             this.rola.Items.Add("Admin");
 

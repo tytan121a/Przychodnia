@@ -104,11 +104,13 @@
             this.listaUzytkownikow.Location = new System.Drawing.Point(19, 110);
             this.listaUzytkownikow.MultiSelect = false;
             this.listaUzytkownikow.Name = "listaUzytkownikow";
+            this.listaUzytkownikow.ReadOnly = true;
             this.listaUzytkownikow.RowHeadersVisible = false;
             this.listaUzytkownikow.RowHeadersWidth = 51;
             this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaUzytkownikow.Size = new System.Drawing.Size(625, 466);
             this.listaUzytkownikow.TabIndex = 5;
+            this.listaUzytkownikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUzytkownikow_CellContentClick);
             // 
             // UserList
             // 
