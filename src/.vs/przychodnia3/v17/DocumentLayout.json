@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\useradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\useradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\models\\adres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\models\\adres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\useredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\useredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\useredit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\useradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\useradd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,31 +26,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Adres.cs",
+              "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\models\\Adres.cs",
+              "RelativeDocumentMoniker": "przychodnia3\\models\\Adres.cs",
+              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\models\\Adres.cs",
+              "RelativeToolTip": "przychodnia3\\models\\Adres.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T17:28:13.444Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "UserList.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs",
               "RelativeDocumentMoniker": "przychodnia3\\UserList.cs",
-              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs [Projekt]",
-              "RelativeToolTip": "przychodnia3\\UserList.cs [Projekt]",
+              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs [Projekt]*",
+              "RelativeToolTip": "przychodnia3\\UserList.cs [Projekt]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:10:40.813Z",
               "EditorCaption": " [Projekt]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UserAdd.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserAdd.cs",
               "RelativeDocumentMoniker": "przychodnia3\\UserAdd.cs",
               "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserAdd.cs [Projekt]",
               "RelativeToolTip": "przychodnia3\\UserAdd.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T16:18:04.181Z",
-              "EditorCaption": " [Projekt]"
+              "WhenOpened": "2025-03-23T16:18:04.181Z"
             },
             {
               "$type": "Document",
@@ -57,8 +73,7 @@
               "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserEdit.cs [Projekt]",
               "RelativeToolTip": "przychodnia3\\UserEdit.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T16:18:03.319Z",
-              "EditorCaption": " [Projekt]"
+              "WhenOpened": "2025-03-23T16:18:03.319Z"
             }
           ]
         }
