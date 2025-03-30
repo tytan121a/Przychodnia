@@ -14,6 +14,33 @@ namespace przychodnia3.respositories
     {
         private readonly string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
 
+        public string generateStringHash(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random random = new Random();
+            char[] result = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(result);
+        }
+
+        public string generateIntHash(int length)
+        {
+            const string chars = "0123456789";
+            Random random = new Random();
+            char[] result = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(result);
+        }
 
         public List<User> GetUsers()
         {
@@ -238,14 +265,14 @@ namespace przychodnia3.respositories
             return users;
         }
 
-      /*  public void ForgetUser(User user)
+        public void ForgetUser(User user)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, Plec=@Plec";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id";
 
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
@@ -255,14 +282,14 @@ namespace przychodnia3.respositories
 
                         command.Parameters.AddWithValue("@Login", user.Login);
                         command.Parameters.AddWithValue("@Haslo", user.Haslo);
-                        command.Parameters.AddWithValue("@Imie", user.Imie);
-                        command.Parameters.AddWithValue("@Nazwisko", user.Nazwisko);
+                        command.Parameters.AddWithValue("@Imie", this.generateStringHash(20));
+                        command.Parameters.AddWithValue("@Nazwisko", this.generateStringHash(30));
                         command.Parameters.AddWithValue("@IdAdresu", user.IdAdresu);
-                        command.Parameters.AddWithValue("@Pesel", user.Pesel);
-                        command.Parameters.AddWithValue("@DataUrodzenia", user.DataUrodzenia);
-                        command.Parameters.AddWithValue("@IdPlci", user.IdPlci);
-                        command.Parameters.AddWithValue("@Email", user.Email);
-                        command.Parameters.AddWithValue("@NrTelefonu", user.NrTelefonu);
+                        command.Parameters.AddWithValue("@Pesel", this.generateIntHash(11));
+                        command.Parameters.AddWithValue("@DataUrodzenia", this.generateStringHash(10));
+                        command.Parameters.AddWithValue("@IdPlci", this.generateIntHash(2));
+                        command.Parameters.AddWithValue("@Email", this.generateStringHash(50));
+                        command.Parameters.AddWithValue("@NrTelefonu", this.generateIntHash(9));
 
                         command.ExecuteNonQuery();
 
@@ -276,7 +303,7 @@ namespace przychodnia3.respositories
                 MessageBox.Show("Błąd tworzenia adresu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        } */
+        }
 
     }
 

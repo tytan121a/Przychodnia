@@ -82,6 +82,7 @@
             this.zapomnij.TabIndex = 107;
             this.zapomnij.Text = "Zapomnij";
             this.zapomnij.UseVisualStyleBackColor = true;
+            this.zapomnij.Click += new System.EventHandler(this.zapomnij_Click);
             // 
             // dataUrodzenia
             // 

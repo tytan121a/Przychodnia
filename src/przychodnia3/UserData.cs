@@ -52,6 +52,39 @@ namespace przychodnia3
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void zapomnij_Click(object sender, EventArgs e)
+        {
+            if(DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz zapomnieć tego użytkownika?", "Zapomnienie Użytkownika", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                User user = new User();
+                user.IdUzytkownika = user1.IdUzytkownika;
+                user.Login = this.login.Text;
+                user.Haslo = this.haslo.Text;
+                user.Imie = this.imie.Text;
+                user.Nazwisko = this.nazwisko.Text;
+
+                var repoAddress = new AddressRespository();
+                repoAddress.ForgetAddress(user1.IdAdresu, this.miejscowosc.Text, this.kodPocztowy.Text, this.ulica.Text, this.numerPosesji.Text, this.numerLokalu.Text);
+
+                user.Pesel = this.pesel.Text;
+                user.DataUrodzenia = this.dataUrodzenia.Value;
+
+                var repoGender = new GenderRespository();
+                user.IdPlci = repoGender.GetGenderId(this.plec.Text);
+
+                user.Email = this.email.Text;
+                user.NrTelefonu = this.numerTelefonu.Text;
+
+                var repoRole = new RoleRespository();
+                user.IdRoli = repoRole.GetRoleId(this.rola.Text);
+
+                var repo = new UserRespository();
+                repo.ForgetUser(user);
+
+                this.DialogResult = DialogResult.OK;
+            }
+        }
     }
     
 }
