@@ -35,6 +35,7 @@
             this.wyszukajButton = new System.Windows.Forms.Button();
             this.listaUzytkownikow = new System.Windows.Forms.DataGridView();
             this.Podglad = new System.Windows.Forms.Button();
+            this.ZapomnianiUzytkownicy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(875, 66);
+            this.label1.Size = new System.Drawing.Size(910, 66);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lista użytkowników";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -61,7 +62,7 @@
             // dodajUzytkownikow
             // 
             this.dodajUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dodajUzytkownikow.Location = new System.Drawing.Point(576, 69);
+            this.dodajUzytkownikow.Location = new System.Drawing.Point(611, 69);
             this.dodajUzytkownikow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dodajUzytkownikow.Name = "dodajUzytkownikow";
             this.dodajUzytkownikow.Size = new System.Drawing.Size(125, 47);
@@ -73,7 +74,7 @@
             // edytujUzytkownikow
             // 
             this.edytujUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.edytujUzytkownikow.Location = new System.Drawing.Point(709, 69);
+            this.edytujUzytkownikow.Location = new System.Drawing.Point(744, 69);
             this.edytujUzytkownikow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edytujUzytkownikow.Name = "edytujUzytkownikow";
             this.edytujUzytkownikow.Size = new System.Drawing.Size(125, 47);
@@ -109,13 +110,14 @@
             this.listaUzytkownikow.RowHeadersVisible = false;
             this.listaUzytkownikow.RowHeadersWidth = 51;
             this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaUzytkownikow.Size = new System.Drawing.Size(833, 568);
+            this.listaUzytkownikow.Size = new System.Drawing.Size(868, 465);
             this.listaUzytkownikow.TabIndex = 5;
             this.listaUzytkownikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUzytkownikow_CellContentClick);
             // 
             // Podglad
             // 
-            this.Podglad.Location = new System.Drawing.Point(733, 710);
+            this.Podglad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.Podglad.Location = new System.Drawing.Point(768, 607);
             this.Podglad.Name = "Podglad";
             this.Podglad.Size = new System.Drawing.Size(125, 34);
             this.Podglad.TabIndex = 6;
@@ -123,12 +125,24 @@
             this.Podglad.UseVisualStyleBackColor = true;
             this.Podglad.Click += new System.EventHandler(this.Podglad_Click);
             // 
+            // ZapomnianiUzytkownicy
+            // 
+            this.ZapomnianiUzytkownicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ZapomnianiUzytkownicy.Location = new System.Drawing.Point(25, 607);
+            this.ZapomnianiUzytkownicy.Name = "ZapomnianiUzytkownicy";
+            this.ZapomnianiUzytkownicy.Size = new System.Drawing.Size(175, 34);
+            this.ZapomnianiUzytkownicy.TabIndex = 7;
+            this.ZapomnianiUzytkownicy.Text = "Zapomniani użytkownicy";
+            this.ZapomnianiUzytkownicy.UseVisualStyleBackColor = true;
+            this.ZapomnianiUzytkownicy.Click += new System.EventHandler(this.ZapomnianiUzytkownicy_Click);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(875, 749);
+            this.ClientSize = new System.Drawing.Size(910, 646);
+            this.Controls.Add(this.ZapomnianiUzytkownicy);
             this.Controls.Add(this.Podglad);
             this.Controls.Add(this.listaUzytkownikow);
             this.Controls.Add(this.wyszukajButton);
@@ -154,6 +168,7 @@
         private System.Windows.Forms.Button wyszukajButton;
         private System.Windows.Forms.DataGridView listaUzytkownikow;
         private System.Windows.Forms.Button Podglad;
+        private System.Windows.Forms.Button ZapomnianiUzytkownicy;
     }
 }
 

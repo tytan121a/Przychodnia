@@ -14,34 +14,6 @@ namespace przychodnia3.respositories
     {
         private readonly string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
 
-        public string generateStringHash(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-
-        public string generateIntHash(int length)
-        {
-            const string chars = "0123456789";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-
         public List<User> GetUsers()
         {
             var users = new List<User>();
@@ -51,7 +23,7 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Tbl_Uzytkownicy";
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE CzyZapomniany=0";
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -184,7 +156,7 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Login=@Login, Haslo=@Haslo, Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Login=@Login, Haslo=@Haslo, Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id AND CzyZapomniany=0";
 
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
@@ -226,7 +198,7 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Imie LIKE @search OR Nazwisko LIKE @search";
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Imie LIKE @search OR Nazwisko LIKE @search AND CzyZapomniany=0";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
@@ -265,14 +237,57 @@ namespace przychodnia3.respositories
             return users;
         }
 
-        public void ForgetUser(User user)
+        public List<User> SearchForgotUsers()
+        {
+            var users = new List<User>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE CzyZapomniany=1";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                User user = new User();
+                                user.IdUzytkownika = reader.GetInt32(0);
+                                user.Imie = reader.GetString(3);
+                                user.Nazwisko = reader.GetString(4);
+                                user.DataZapomnienia = reader.GetDateTime(12);
+                                user.KtoZapomnial = reader.GetInt32(13);
+
+                                users.Add(user);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd wyszukiwania użytkowników: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return users;
+        }
+
+    
+
+
+
+    public void ForgetUser(User user)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu, CzyZapomniany = 1, DataZapomnienia = @DataZapomnienia, KtoZapomnial=@KtoZapomnial  WHERE IdUzytkownika = @id";
 
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
@@ -280,16 +295,16 @@ namespace przychodnia3.respositories
 
                         command.Parameters.AddWithValue("@id", user.IdUzytkownika);
 
-                        command.Parameters.AddWithValue("@Login", user.Login);
-                        command.Parameters.AddWithValue("@Haslo", user.Haslo);
-                        command.Parameters.AddWithValue("@Imie", this.generateStringHash(20));
-                        command.Parameters.AddWithValue("@Nazwisko", this.generateStringHash(30));
-                        command.Parameters.AddWithValue("@IdAdresu", user.IdAdresu);
-                        command.Parameters.AddWithValue("@Pesel", this.generateIntHash(11));
-                        command.Parameters.AddWithValue("@DataUrodzenia", this.generateStringHash(10));
-                        command.Parameters.AddWithValue("@IdPlci", this.generateIntHash(2));
-                        command.Parameters.AddWithValue("@Email", this.generateStringHash(50));
-                        command.Parameters.AddWithValue("@NrTelefonu", this.generateIntHash(9));
+                        command.Parameters.AddWithValue("@Imie", generateStringHash(20));
+                        command.Parameters.AddWithValue("@Nazwisko", generateStringHash(30));
+                        command.Parameters.AddWithValue("@Pesel", generateIntHash(11));
+                        command.Parameters.AddWithValue("@DataUrodzenia", generateDateHash());
+                        command.Parameters.AddWithValue("@IdPlci", 1);
+                        command.Parameters.AddWithValue("@Email", generateEmailHash());
+                        command.Parameters.AddWithValue("@NrTelefonu", generateIntHash(9));
+                        command.Parameters.AddWithValue("@DataZapomnienia", DateTime.Today);
+                        command.Parameters.AddWithValue("@KtoZapomnial", 1);
+
 
                         command.ExecuteNonQuery();
 
@@ -300,9 +315,50 @@ namespace przychodnia3.respositories
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd tworzenia adresu: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Błąd tworzenia użytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        public string generateStringHash(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random random = new Random();
+            char[] result = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(result);
+        }
+
+        public string generateIntHash(int length)
+        {
+            const string chars = "0123456789";
+            Random random = new Random();
+            char[] result = new char[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(result);
+        }
+        public string generateEmailHash()
+        {
+            return generateStringHash(10) + '@' + generateStringHash(5) + '.' + generateStringHash(2);
+        }
+        public DateTime generateDateHash()
+        {
+            Random random = new Random();
+            int year = random.Next(1900, 2100); // Zakres lat (możesz zmienić)
+            int month = random.Next(1, 13); // Miesiące od 1 do 12
+            int day = random.Next(1, DateTime.DaysInMonth(year, month) + 1); // Losowy dzień z uwzględnieniem ilości dni w miesiącu
+
+            return new DateTime(year, month, day);
         }
 
     }

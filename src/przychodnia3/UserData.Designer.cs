@@ -95,7 +95,6 @@
             // 
             // rola
             // 
-            this.rola.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rola.Enabled = false;
             this.rola.FormattingEnabled = true;
             this.rola.Location = new System.Drawing.Point(339, 620);
@@ -106,7 +105,6 @@
             // 
             // plec
             // 
-            this.plec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.plec.Enabled = false;
             this.plec.FormattingEnabled = true;
             this.plec.Location = new System.Drawing.Point(339, 581);
@@ -117,6 +115,7 @@
             // 
             // haslo
             // 
+            this.haslo.Enabled = false;
             this.haslo.Location = new System.Drawing.Point(339, 82);
             this.haslo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.haslo.MaxLength = 15;
@@ -128,6 +127,7 @@
             // 
             // imie
             // 
+            this.imie.Enabled = false;
             this.imie.Location = new System.Drawing.Point(339, 124);
             this.imie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie.MaxLength = 20;
@@ -138,6 +138,7 @@
             // 
             // nazwisko
             // 
+            this.nazwisko.Enabled = false;
             this.nazwisko.Location = new System.Drawing.Point(339, 172);
             this.nazwisko.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko.MaxLength = 30;
@@ -148,6 +149,7 @@
             // 
             // pesel
             // 
+            this.pesel.Enabled = false;
             this.pesel.Location = new System.Drawing.Point(339, 218);
             this.pesel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pesel.MaxLength = 11;
@@ -158,6 +160,7 @@
             // 
             // email
             // 
+            this.email.Enabled = false;
             this.email.Location = new System.Drawing.Point(339, 301);
             this.email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.email.MaxLength = 25;
@@ -168,6 +171,7 @@
             // 
             // numerTelefonu
             // 
+            this.numerTelefonu.Enabled = false;
             this.numerTelefonu.Location = new System.Drawing.Point(339, 342);
             this.numerTelefonu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerTelefonu.MaxLength = 9;
@@ -178,6 +182,7 @@
             // 
             // miejscowosc
             // 
+            this.miejscowosc.Enabled = false;
             this.miejscowosc.Location = new System.Drawing.Point(339, 383);
             this.miejscowosc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.miejscowosc.MaxLength = 30;
@@ -188,6 +193,7 @@
             // 
             // kodPocztowy
             // 
+            this.kodPocztowy.Enabled = false;
             this.kodPocztowy.Location = new System.Drawing.Point(339, 423);
             this.kodPocztowy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kodPocztowy.MaxLength = 6;
@@ -198,6 +204,7 @@
             // 
             // ulica
             // 
+            this.ulica.Enabled = false;
             this.ulica.Location = new System.Drawing.Point(339, 463);
             this.ulica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ulica.MaxLength = 50;
@@ -208,6 +215,7 @@
             // 
             // numerPosesji
             // 
+            this.numerPosesji.Enabled = false;
             this.numerPosesji.Location = new System.Drawing.Point(339, 506);
             this.numerPosesji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerPosesji.MaxLength = 10;
@@ -218,6 +226,7 @@
             // 
             // numerLokalu
             // 
+            this.numerLokalu.Enabled = false;
             this.numerLokalu.Location = new System.Drawing.Point(339, 544);
             this.numerLokalu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerLokalu.MaxLength = 10;
@@ -228,6 +237,7 @@
             // 
             // login
             // 
+            this.login.Enabled = false;
             this.login.Location = new System.Drawing.Point(339, 37);
             this.login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.login.MaxLength = 30;

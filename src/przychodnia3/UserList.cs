@@ -1,4 +1,5 @@
-﻿using przychodnia3.respositories;
+﻿using przychodnia3.models;
+using przychodnia3.respositories;
 
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace przychodnia3
         private void ReadUsers()
         {
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Numer pacjenta");
+            dataTable.Columns.Add("Numer uzytkownika");
             dataTable.Columns.Add("Użytkownik");
             dataTable.Columns.Add("Data Urodzenia");
             dataTable.Columns.Add("Email");
@@ -39,7 +40,7 @@ namespace przychodnia3
             {
                 var row = dataTable.NewRow();
 
-                row["Numer pacjenta"] = user.IdUzytkownika;
+                row["Numer uzytkownika"] = user.IdUzytkownika;
                 row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
                 row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
                 row["Email"] = user.Email;
@@ -85,7 +86,7 @@ namespace przychodnia3
         private void wyszukajButton_Click(object sender, EventArgs e)
         {
             DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Numer pacjenta");
+            dataTable.Columns.Add("Numer uzytkownika");
             dataTable.Columns.Add("Użytkownik");
             dataTable.Columns.Add("Data Urodzenia");
             dataTable.Columns.Add("Email");
@@ -99,7 +100,7 @@ namespace przychodnia3
             {
                 var row = dataTable.NewRow();
 
-                row["Numer pacjenta"] = user.IdUzytkownika;
+                row["Numer uzytkownika"] = user.IdUzytkownika;
                 row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
                 row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
                 row["Email"] = user.Email;
@@ -131,6 +132,15 @@ namespace przychodnia3
             if (user == null) return;
 
             UserData form = new UserData(user);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ReadUsers();
+            }
+        }
+
+        private void ZapomnianiUzytkownicy_Click(object sender, EventArgs e)
+        {
+            ForgotList form = new ForgotList();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 ReadUsers();

@@ -293,3 +293,5 @@ C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\
 C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.pdb
 >>>>>>> 292b5acea31f01975b43ab568631f5ff05c7e1e7
 C:\Users\Rafał\Desktop\Przychodnia\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.UserData.resources
+C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.UserData.resources
+C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.ForgotList.resources
