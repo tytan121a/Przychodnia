@@ -33,30 +33,38 @@
             this.dodajUzytkownikow = new System.Windows.Forms.Button();
             this.edytujUzytkownikow = new System.Windows.Forms.Button();
             this.wyszukajButton = new System.Windows.Forms.Button();
+            this.listaUzytkownikow = new System.Windows.Forms.DataGridView();
+            this.Podglad = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).BeginInit();
             this.SuspendLayout();
             // 
             // wyszukajText
             // 
-            this.wyszukajText.Location = new System.Drawing.Point(134, 157);
+            this.wyszukajText.Location = new System.Drawing.Point(132, 87);
+            this.wyszukajText.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wyszukajText.Name = "wyszukajText";
-            this.wyszukajText.Size = new System.Drawing.Size(406, 22);
+            this.wyszukajText.Size = new System.Drawing.Size(407, 22);
             this.wyszukajText.TabIndex = 0;
+            this.wyszukajText.TextChanged += new System.EventHandler(this.wyszukajText_TextChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(243, 42);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(425, 54);
+            this.label1.Size = new System.Drawing.Size(875, 66);
             this.label1.TabIndex = 1;
             this.label1.Text = "Lista użytkowników";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dodajUzytkownikow
             // 
-            this.dodajUzytkownikow.Location = new System.Drawing.Point(647, 145);
+            this.dodajUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dodajUzytkownikow.Location = new System.Drawing.Point(576, 69);
+            this.dodajUzytkownikow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dodajUzytkownikow.Name = "dodajUzytkownikow";
-            this.dodajUzytkownikow.Size = new System.Drawing.Size(126, 47);
+            this.dodajUzytkownikow.Size = new System.Drawing.Size(125, 47);
             this.dodajUzytkownikow.TabIndex = 2;
             this.dodajUzytkownikow.Text = "Dodaj użytkoników";
             this.dodajUzytkownikow.UseVisualStyleBackColor = true;
@@ -64,35 +72,74 @@
             // 
             // edytujUzytkownikow
             // 
-            this.edytujUzytkownikow.Location = new System.Drawing.Point(780, 145);
+            this.edytujUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.edytujUzytkownikow.Location = new System.Drawing.Point(709, 69);
+            this.edytujUzytkownikow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edytujUzytkownikow.Name = "edytujUzytkownikow";
-            this.edytujUzytkownikow.Size = new System.Drawing.Size(126, 47);
+            this.edytujUzytkownikow.Size = new System.Drawing.Size(125, 47);
             this.edytujUzytkownikow.TabIndex = 3;
             this.edytujUzytkownikow.Text = "Edytuj użytkoników";
             this.edytujUzytkownikow.UseVisualStyleBackColor = true;
+            this.edytujUzytkownikow.Click += new System.EventHandler(this.edytujUzytkownikow_Click);
             // 
             // wyszukajButton
             // 
-            this.wyszukajButton.Location = new System.Drawing.Point(25, 151);
+            this.wyszukajButton.Location = new System.Drawing.Point(24, 81);
+            this.wyszukajButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wyszukajButton.Name = "wyszukajButton";
             this.wyszukajButton.Size = new System.Drawing.Size(103, 34);
             this.wyszukajButton.TabIndex = 4;
             this.wyszukajButton.Text = "Wyszukaj";
             this.wyszukajButton.UseVisualStyleBackColor = true;
+            this.wyszukajButton.Click += new System.EventHandler(this.wyszukajButton_Click);
+            // 
+            // listaUzytkownikow
+            // 
+            this.listaUzytkownikow.AllowUserToAddRows = false;
+            this.listaUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listaUzytkownikow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.listaUzytkownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaUzytkownikow.Location = new System.Drawing.Point(25, 135);
+            this.listaUzytkownikow.Margin = new System.Windows.Forms.Padding(4);
+            this.listaUzytkownikow.MultiSelect = false;
+            this.listaUzytkownikow.Name = "listaUzytkownikow";
+            this.listaUzytkownikow.ReadOnly = true;
+            this.listaUzytkownikow.RowHeadersVisible = false;
+            this.listaUzytkownikow.RowHeadersWidth = 51;
+            this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.listaUzytkownikow.Size = new System.Drawing.Size(833, 568);
+            this.listaUzytkownikow.TabIndex = 5;
+            this.listaUzytkownikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUzytkownikow_CellContentClick);
+            // 
+            // Podglad
+            // 
+            this.Podglad.Location = new System.Drawing.Point(733, 710);
+            this.Podglad.Name = "Podglad";
+            this.Podglad.Size = new System.Drawing.Size(125, 34);
+            this.Podglad.TabIndex = 6;
+            this.Podglad.Text = "Podgląd";
+            this.Podglad.UseVisualStyleBackColor = true;
+            this.Podglad.Click += new System.EventHandler(this.Podglad_Click);
             // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(941, 736);
+            this.ClientSize = new System.Drawing.Size(875, 749);
+            this.Controls.Add(this.Podglad);
+            this.Controls.Add(this.listaUzytkownikow);
             this.Controls.Add(this.wyszukajButton);
             this.Controls.Add(this.edytujUzytkownikow);
             this.Controls.Add(this.dodajUzytkownikow);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.wyszukajText);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserList";
-            this.Text = "Form1";
+            this.Text = "Uzytkownicy";
+            ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +152,8 @@
         private System.Windows.Forms.Button dodajUzytkownikow;
         private System.Windows.Forms.Button edytujUzytkownikow;
         private System.Windows.Forms.Button wyszukajButton;
+        private System.Windows.Forms.DataGridView listaUzytkownikow;
+        private System.Windows.Forms.Button Podglad;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace przychodnia3
 {
-    internal class Adres
+    public class Adres
     {
         public int IdAdresu { get; set; }
         public string Miejscowosc { get; set; }

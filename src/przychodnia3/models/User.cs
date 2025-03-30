@@ -8,7 +8,7 @@ namespace przychodnia3.models
 {
     public class User
     {
-        public int Id { get; set; }
+        public int IdUzytkownika { get; set; }
         public string Login { get; set; }
         public string Haslo { get; set; }
         public string Imie { get; set; }

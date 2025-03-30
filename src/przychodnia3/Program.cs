@@ -18,23 +18,6 @@ namespace przychodnia3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserList());
-
-            string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    Console.WriteLine("Połączenie udane!");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Błąd: " + ex.Message);
-                }
-                {
-                }
-            }
         }
     }
 }

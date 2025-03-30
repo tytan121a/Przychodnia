@@ -160,6 +160,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="respositories\AddressRespository.cs" />
+    <Compile Include="respositories\GenderRespository.cs" />
+    <Compile Include="respositories\RoleRespository.cs" />
     <Compile Include="UserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +170,12 @@
       <DependentUpon>UserAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Adres.cs" />
+    <Compile Include="UserData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserData.Designer.cs">
+      <DependentUpon>UserData.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +196,9 @@
     <Compile Include="models\Role.cs" />
     <EmbeddedResource Include="UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserData.resx">
+      <DependentUpon>UserData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserEdit.resx">
       <DependentUpon>UserEdit.cs</DependentUpon>
