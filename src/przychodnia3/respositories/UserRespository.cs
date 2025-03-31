@@ -315,7 +315,7 @@ namespace przychodnia3.respositories
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd tworzenia użytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Błąd zapominania użytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

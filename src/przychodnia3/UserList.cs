@@ -85,30 +85,33 @@ namespace przychodnia3
 
         private void wyszukajButton_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-            dataTable.Columns.Add("Numer uzytkownika");
-            dataTable.Columns.Add("Użytkownik");
-            dataTable.Columns.Add("Data Urodzenia");
-            dataTable.Columns.Add("Email");
-            dataTable.Columns.Add("Numer Telefonu");
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("Numer uzytkownika");
+                dataTable.Columns.Add("Użytkownik");
+                dataTable.Columns.Add("Data Urodzenia");
+                dataTable.Columns.Add("Email");
+                dataTable.Columns.Add("Numer Telefonu");
 
-            string searchText = wyszukajText.Text.Trim();
-            var repo = new UserRespository();
-            var users = repo.SearchUsers(searchText);
+                string searchText = wyszukajText.Text.Trim();
+                var repo = new UserRespository();
+                var users = repo.SearchUsers(searchText);
 
-            foreach (var user in users)
-            {
-                var row = dataTable.NewRow();
+                foreach (var user in users)
+                {
+                    if (user.CzyZapomniany == false)
+                    {
+                        var row = dataTable.NewRow();
 
-                row["Numer uzytkownika"] = user.IdUzytkownika;
-                row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
-                row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
-                row["Email"] = user.Email;
-                row["Numer Telefonu"] = user.NrTelefonu;
+                        row["Numer uzytkownika"] = user.IdUzytkownika;
+                        row["Użytkownik"] = user.Imie + " " + user.Nazwisko;
+                        row["Data Urodzenia"] = user.DataUrodzenia.ToString("dd-MM-yyyy");
+                        row["Email"] = user.Email;
+                        row["Numer Telefonu"] = user.NrTelefonu;
 
-                dataTable.Rows.Add(row);
-            }
-            listaUzytkownikow.DataSource = dataTable;
+                        dataTable.Rows.Add(row);
+                    }
+                }
+                listaUzytkownikow.DataSource = dataTable;
 
         }
         private void wyszukajText_TextChanged(object sender, EventArgs e)

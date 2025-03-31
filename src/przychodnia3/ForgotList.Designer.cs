@@ -63,6 +63,7 @@
             this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaUzytkownikow.Size = new System.Drawing.Size(858, 435);
             this.listaUzytkownikow.TabIndex = 12;
+            this.listaUzytkownikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUzytkownikow_CellContentClick);
             // 
             // label1
             // 

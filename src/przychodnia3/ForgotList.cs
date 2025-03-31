@@ -50,5 +50,10 @@ namespace przychodnia3
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        private void listaUzytkownikow_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

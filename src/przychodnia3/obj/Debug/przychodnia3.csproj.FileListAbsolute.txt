@@ -295,3 +295,4 @@ C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\
 C:\Users\Rafał\Desktop\Przychodnia\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.UserData.resources
 C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.UserData.resources
 C:\Users\peorp\OneDrive\Pulpit\Nowy folder (2)\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.ForgotList.resources
+C:\Users\Rafał\Desktop\Przychodnia\Przychodnia\src\przychodnia3\obj\Debug\przychodnia3.ForgotList.resources
