@@ -98,8 +98,6 @@ namespace przychodnia3
 
                 foreach (var user in users)
                 {
-                    if (user.CzyZapomniany == false)
-                    {
                         var row = dataTable.NewRow();
 
                         row["Numer uzytkownika"] = user.IdUzytkownika;
@@ -109,7 +107,6 @@ namespace przychodnia3
                         row["Numer Telefonu"] = user.NrTelefonu;
 
                         dataTable.Rows.Add(row);
-                    }
                 }
                 listaUzytkownikow.DataSource = dataTable;
 

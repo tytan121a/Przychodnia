@@ -198,7 +198,7 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Imie LIKE @search OR Nazwisko LIKE @search AND CzyZapomniany=0";
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE (Imie LIKE @search OR Nazwisko LIKE @search) AND CzyZapomniany=0";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
@@ -292,7 +292,6 @@ namespace przychodnia3.respositories
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
-
                         command.Parameters.AddWithValue("@id", user.IdUzytkownika);
 
                         command.Parameters.AddWithValue("@Imie", generateStringHash(20));
