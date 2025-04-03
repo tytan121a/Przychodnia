@@ -14,12 +14,18 @@ namespace przychodnia3
             InitializeComponent();
             this.user1 = user1;
 
-            this.plec.Items.Add("Mężczyzna");
-            this.plec.Items.Add("Kobieta");
+            var repoGender = new GenderRespository();
+            foreach (Plcie plec in repoGender.GetGenders())
+            {
+                this.plec.Items.Add(plec.Plec);
+            }
 
-            
-            this.rola.Items.Add("Recepcjonista");
-            this.rola.Items.Add("Admin");
+            var repoRole = new RoleRespository();
+            foreach (Role rola in repoRole.GetRole())
+            {
+                this.rola.Items.Add(rola.NazwaRoli);
+            }
+
 
             EditUser(user1);
         }
