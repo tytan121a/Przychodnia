@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace przychodnia3
 {
-    internal class Plcie
+    public class Plcie
     {
         public int IdPlci { get; set; }
         public string Plec { get; set; }

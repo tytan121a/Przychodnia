@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\respositories\\userrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\respositories\\addressrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\respositories\\addressrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\respositories\\userrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\respositories\\userrespository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\userlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|c:\\users\\rafa\u0142\\desktop\\przychodnia\\przychodnia\\src\\przychodnia3\\hash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7781EDD4-6849-4BFA-8D15-B52FA1710D37}|przychodnia3\\przychodnia3.csproj|solutionrelative:przychodnia3\\hash.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserList.cs",
-              "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs",
-              "RelativeDocumentMoniker": "przychodnia3\\UserList.cs",
-              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs",
-              "RelativeToolTip": "przychodnia3\\UserList.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAgwFwAAAAEAAAA",
+              "Title": "Hash.cs",
+              "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\Hash.cs",
+              "RelativeDocumentMoniker": "przychodnia3\\Hash.cs",
+              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\Hash.cs",
+              "RelativeToolTip": "przychodnia3\\Hash.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:08:08.009Z",
+              "WhenOpened": "2025-04-03T19:28:51.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserList.cs [Projekt]",
-              "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs",
-              "RelativeDocumentMoniker": "przychodnia3\\UserList.cs",
-              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\UserList.cs [Projekt]",
-              "RelativeToolTip": "przychodnia3\\UserList.cs [Projekt]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T14:08:06.81Z",
-              "EditorCaption": " [Projekt]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "UserRespository.cs",
               "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\respositories\\UserRespository.cs",
               "RelativeDocumentMoniker": "przychodnia3\\respositories\\UserRespository.cs",
               "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\respositories\\UserRespository.cs",
               "RelativeToolTip": "przychodnia3\\respositories\\UserRespository.cs",
-              "ViewState": "AQIAAAkBAAAAAAAAAAAuwBgBAAAAAAAA",
+              "ViewState": "AQIAABYBAAAAAAAAAAAAwCYBAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T14:07:57.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddressRespository.cs",
+              "DocumentMoniker": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\respositories\\AddressRespository.cs",
+              "RelativeDocumentMoniker": "przychodnia3\\respositories\\AddressRespository.cs",
+              "ToolTip": "C:\\Users\\Rafa\u0142\\Desktop\\Przychodnia\\Przychodnia\\src\\przychodnia3\\respositories\\AddressRespository.cs",
+              "RelativeToolTip": "przychodnia3\\respositories\\AddressRespository.cs",
+              "ViewState": "AQIAAKAAAAAAAAAAAAAkwKYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T15:30:46.877Z",
               "EditorCaption": ""
             }
           ]

@@ -10,10 +10,43 @@ namespace przychodnia3.respositories
 {
     public class RoleRespository
     {
-        private readonly string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
+        private readonly string connectionString = "Server=tcp:przychodnia3.database.windows.net,1433;Initial Catalog=przychodnia3;Persist Security Info=False;User ID=przychodnia3;Password=Testowanie3!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+        public List<Role> GetRole()
+        {
+            var role = new List<Role>();
 
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Tbl_Role";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Role rola = new Role();
+                                rola.IdRoli = reader.GetInt32(0);
+                                rola.NazwaRoli = reader.GetString(1);
 
+                                role.Add(rola);
+                            }
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd pobierania plci: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return role;
+        }
 
         public string GetRoleName(int id)
         {

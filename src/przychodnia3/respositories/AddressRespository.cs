@@ -11,8 +11,7 @@ namespace przychodnia3.respositories
 {
     public class AddressRespository
     {
-        private readonly string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
-
+        private readonly string connectionString = "Server=tcp:przychodnia3.database.windows.net,1433;Initial Catalog=przychodnia3;Persist Security Info=False;User ID=przychodnia3;Password=Testowanie3!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         public int GetAddressId(string Miejscowosc, string KodPocztowy, string Ulica, string NrPosesji, string NrLokalu)
         {
             try
@@ -29,13 +28,14 @@ namespace przychodnia3.respositories
                         command.Parameters.AddWithValue("@NrPosesji", NrPosesji);
                         command.Parameters.AddWithValue("@NrLokalu", NrLokalu);
 
-
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
+
                             if (reader.Read())
                             {
                                 return reader.GetInt32(0); ;
                             }
+
                         }
                     }
 
@@ -171,19 +171,17 @@ namespace przychodnia3.respositories
                 {
                     conn.Open();
                     string sql = "UPDATE Tbl_Adresy SET Miejscowosc=@Miejscowosc, KodPocztowy=@KodPocztowy, Ulica=@Ulica, NrPosesji=@NrPosesji, NrLokalu=@NrLokalu WHERE IdAdresu = @id";
-
-
-
+                    var hash = new przychodnia3.Hash();
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
                         command.Parameters.AddWithValue("@id", id);
 
-                        command.Parameters.AddWithValue("@Miejscowosc", generateStringHash(30));
-                        command.Parameters.AddWithValue("@KodPocztowy", generateIntHash(2)+"-"+generateIntHash(3));
-                        command.Parameters.AddWithValue("@Ulica", generateStringHash(50));
-                        command.Parameters.AddWithValue("@NrPosesji", generateStringHash(10));
-                        command.Parameters.AddWithValue("@NrLokalu", generateStringHash(10));
+                        command.Parameters.AddWithValue("@Miejscowosc", hash.generateStringHash(30));
+                        command.Parameters.AddWithValue("@KodPocztowy", hash.generateIntHash(2)+"-"+ hash.generateIntHash(3));
+                        command.Parameters.AddWithValue("@Ulica", hash.generateStringHash(50));
+                        command.Parameters.AddWithValue("@NrPosesji", hash.generateStringHash(10));
+                        command.Parameters.AddWithValue("@NrLokalu", hash.generateStringHash(10));
 
                         command.ExecuteNonQuery();
 
@@ -198,35 +196,6 @@ namespace przychodnia3.respositories
             }
 
         }
-
-        public string generateStringHash(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-
-        public string generateIntHash(int length)
-        {
-            const string chars = "0123456789";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-
 
     }
 }

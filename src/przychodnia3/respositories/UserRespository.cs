@@ -12,7 +12,7 @@ namespace przychodnia3.respositories
 {
     public class UserRespository
     {
-        private readonly string connectionString = "Server=przychodnia.cnu8c8sis4iy.eu-north-1.rds.amazonaws.com,1433;Database=PrzychodniaDB;User Id=admin;Password=Przychodnia123;TrustServerCertificate=True;";
+        private readonly string connectionString = "Server=tcp:przychodnia3.database.windows.net,1433;Initial Catalog=przychodnia3;Persist Security Info=False;User ID=przychodnia3;Password=Testowanie3!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public List<User> GetUsers()
         {
@@ -288,19 +288,19 @@ namespace przychodnia3.respositories
                 {
                     conn.Open();
                     string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu, CzyZapomniany = 1, DataZapomnienia = @DataZapomnienia, KtoZapomnial=@KtoZapomnial  WHERE IdUzytkownika = @id";
-
+                    var hash = new przychodnia3.Hash();
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
                         command.Parameters.AddWithValue("@id", user.IdUzytkownika);
 
-                        command.Parameters.AddWithValue("@Imie", generateStringHash(20));
-                        command.Parameters.AddWithValue("@Nazwisko", generateStringHash(30));
-                        command.Parameters.AddWithValue("@Pesel", generateIntHash(11));
-                        command.Parameters.AddWithValue("@DataUrodzenia", generateDateHash());
+                        command.Parameters.AddWithValue("@Imie", hash.generateStringHash(20));
+                        command.Parameters.AddWithValue("@Nazwisko", hash.generateStringHash(30));
+                        command.Parameters.AddWithValue("@Pesel", hash.generateIntHash(11));
+                        command.Parameters.AddWithValue("@DataUrodzenia", hash.generateDateHash());
                         command.Parameters.AddWithValue("@IdPlci", 1);
-                        command.Parameters.AddWithValue("@Email", generateEmailHash());
-                        command.Parameters.AddWithValue("@NrTelefonu", generateIntHash(9));
+                        command.Parameters.AddWithValue("@Email", hash.generateEmailHash());
+                        command.Parameters.AddWithValue("@NrTelefonu", hash.generateIntHash(9));
                         command.Parameters.AddWithValue("@DataZapomnienia", DateTime.Today);
                         command.Parameters.AddWithValue("@KtoZapomnial", 1);
 
@@ -317,47 +317,6 @@ namespace przychodnia3.respositories
                 MessageBox.Show("Błąd zapominania użytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
-
-        public string generateStringHash(int length)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-
-        public string generateIntHash(int length)
-        {
-            const string chars = "0123456789";
-            Random random = new Random();
-            char[] result = new char[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                result[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(result);
-        }
-        public string generateEmailHash()
-        {
-            return generateStringHash(10) + '@' + generateStringHash(5) + '.' + generateStringHash(2);
-        }
-        public DateTime generateDateHash()
-        {
-            Random random = new Random();
-            int year = random.Next(1900, 2100); // Zakres lat (możesz zmienić)
-            int month = random.Next(1, 13); // Miesiące od 1 do 12
-            int day = random.Next(1, DateTime.DaysInMonth(year, month) + 1); // Losowy dzień z uwzględnieniem ilości dni w miesiącu
-
-            return new DateTime(year, month, day);
         }
 
     }

@@ -20,16 +20,22 @@ namespace przychodnia3
             InitializeComponent();
             this.DialogResult = DialogResult.Cancel;
 
-            this.plec.Items.Add("Mężczyzna");
-            this.plec.Items.Add("Kobieta");
+            var repoGender = new GenderRespository();
+            foreach (Plcie plec in repoGender.GetGenders())
+            {
+                this.plec.Items.Add(plec.Plec);
+            }
 
-            
-            this.rola.Items.Add("Recepcjonista");
-            this.rola.Items.Add("Admin");
+            var repoRole = new RoleRespository();
+            foreach (Role rola in repoRole.GetRole())
+            {
+                this.rola.Items.Add(rola.NazwaRoli);
+            }
+
 
         }
 
-        
+
 
         private bool ValidateInput()
         {
@@ -118,7 +124,7 @@ namespace przychodnia3
 
             int addressID = repoAdres.GetAddressId(adres.Miejscowosc, adres.KodPocztowy, adres.Ulica, adres.NrPosesji, adres.NrLokalu);
             if (addressID != -1) return;
-            
+                      
             User user = new User();
             user.Login = this.login.Text;
             user.Haslo = this.haslo.Text;
