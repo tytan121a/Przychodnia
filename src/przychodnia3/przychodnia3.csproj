@@ -160,39 +160,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForgotList.cs">
+    <Compile Include="forms\ForgotList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ForgotList.Designer.cs">
+    <Compile Include="forms\ForgotList.Designer.cs">
       <DependentUpon>ForgotList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Hash.cs" />
+    <Compile Include="functions\Hash.cs" />
+    <Compile Include="functions\validation.cs" />
     <Compile Include="respositories\AddressRespository.cs" />
     <Compile Include="respositories\GenderRespository.cs" />
     <Compile Include="respositories\RoleRespository.cs" />
-    <Compile Include="UserAdd.cs">
+    <Compile Include="forms\UserAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserAdd.Designer.cs">
+    <Compile Include="forms\UserAdd.Designer.cs">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="models\Adres.cs" />
-    <Compile Include="UserData.cs">
+    <Compile Include="forms\UserData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserData.Designer.cs">
+    <Compile Include="forms\UserData.Designer.cs">
       <DependentUpon>UserData.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserEdit.cs">
+    <Compile Include="forms\UserEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserEdit.Designer.cs">
+    <Compile Include="forms\UserEdit.Designer.cs">
       <DependentUpon>UserEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserList.cs">
+    <Compile Include="forms\UserList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserList.Designer.cs">
+    <Compile Include="forms\UserList.Designer.cs">
       <DependentUpon>UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="models\User.cs" />
@@ -201,19 +202,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="respositories\UserRespository.cs" />
     <Compile Include="models\Role.cs" />
-    <EmbeddedResource Include="ForgotList.resx">
+    <EmbeddedResource Include="forms\ForgotList.resx">
       <DependentUpon>ForgotList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserAdd.resx">
+    <EmbeddedResource Include="forms\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserData.resx">
+    <EmbeddedResource Include="forms\UserData.resx">
       <DependentUpon>UserData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserEdit.resx">
+    <EmbeddedResource Include="forms\UserEdit.resx">
       <DependentUpon>UserEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserList.resx">
+    <EmbeddedResource Include="forms\UserList.resx">
       <DependentUpon>UserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

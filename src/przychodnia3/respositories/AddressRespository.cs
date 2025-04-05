@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using przychodnia3.functions;
 
 namespace przychodnia3.respositories
 {
@@ -171,7 +172,7 @@ namespace przychodnia3.respositories
                 {
                     conn.Open();
                     string sql = "UPDATE Tbl_Adresy SET Miejscowosc=@Miejscowosc, KodPocztowy=@KodPocztowy, Ulica=@Ulica, NrPosesji=@NrPosesji, NrLokalu=@NrLokalu WHERE IdAdresu = @id";
-                    var hash = new przychodnia3.Hash();
+                    var hash = new Hash();
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {

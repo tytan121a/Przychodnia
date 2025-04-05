@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using przychodnia3.functions;
 namespace przychodnia3.respositories
 {
     public class UserRespository
@@ -107,7 +107,91 @@ namespace przychodnia3.respositories
             return null;
         }
 
+        public bool LoginExist(string login)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Login=@login";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@login", login);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {   
+                            return reader.Read();
+                           
+                        }
+                    }
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd pobierania uzytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
+        }
+
+        public bool PeselExist(string pesel)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Pesel=@pesel";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@pesel", pesel);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            return reader.Read();
+
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd pobierania uzytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
+        }
+        public bool EmailExist(string email)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Email=@email";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@email", email);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            return reader.Read();
+
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd pobierania uzytkownika: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
+        }
 
         public void CreateUser(User user)
         {
@@ -288,7 +372,7 @@ namespace przychodnia3.respositories
                 {
                     conn.Open();
                     string sql = "UPDATE Tbl_Uzytkownicy SET Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu, CzyZapomniany = 1, DataZapomnienia = @DataZapomnienia, KtoZapomnial=@KtoZapomnial  WHERE IdUzytkownika = @id";
-                    var hash = new przychodnia3.Hash();
+                    var hash = new Hash();
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {

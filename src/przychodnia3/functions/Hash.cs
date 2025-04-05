@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace przychodnia3
+namespace przychodnia3.functions
 {
     public class Hash
     {
