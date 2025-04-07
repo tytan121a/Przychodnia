@@ -48,7 +48,7 @@ namespace przychodnia3
             repoAdres.CreateAddress(adres);
 
             int addressID = repoAdres.GetAddressId(adres.Miejscowosc, adres.KodPocztowy, adres.Ulica, adres.NrPosesji, adres.NrLokalu);
-            if (addressID != -1) return;
+            if (addressID == -1) return;
                       
             User user = new User();
             user.Login = this.login.Text;
