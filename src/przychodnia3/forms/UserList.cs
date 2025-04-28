@@ -146,5 +146,15 @@ namespace przychodnia3
                 ReadUsers();
             }
         }
+
+
+        private void UprawnieniaButton_Click_1(object sender, EventArgs e)
+        {
+            RightsList form = new RightsList();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                ReadUsers();
+            }
+        }
     }
 }

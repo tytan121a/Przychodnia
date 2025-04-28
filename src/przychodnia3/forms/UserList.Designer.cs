@@ -36,6 +36,7 @@
             this.listaUzytkownikow = new System.Windows.Forms.DataGridView();
             this.Podglad = new System.Windows.Forms.Button();
             this.ZapomnianiUzytkownicy = new System.Windows.Forms.Button();
+            this.UprawnieniaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,12 +137,24 @@
             this.ZapomnianiUzytkownicy.UseVisualStyleBackColor = true;
             this.ZapomnianiUzytkownicy.Click += new System.EventHandler(this.ZapomnianiUzytkownicy_Click);
             // 
+            // UprawnieniaButton
+            // 
+            this.UprawnieniaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UprawnieniaButton.Location = new System.Drawing.Point(206, 607);
+            this.UprawnieniaButton.Name = "UprawnieniaButton";
+            this.UprawnieniaButton.Size = new System.Drawing.Size(125, 34);
+            this.UprawnieniaButton.TabIndex = 8;
+            this.UprawnieniaButton.Text = "Uprawnienia";
+            this.UprawnieniaButton.UseVisualStyleBackColor = true;
+            this.UprawnieniaButton.Click += new System.EventHandler(this.UprawnieniaButton_Click_1);
+            // 
             // UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(910, 646);
+            this.Controls.Add(this.UprawnieniaButton);
             this.Controls.Add(this.ZapomnianiUzytkownicy);
             this.Controls.Add(this.Podglad);
             this.Controls.Add(this.listaUzytkownikow);
@@ -169,6 +182,7 @@
         private System.Windows.Forms.DataGridView listaUzytkownikow;
         private System.Windows.Forms.Button Podglad;
         private System.Windows.Forms.Button ZapomnianiUzytkownicy;
+        private System.Windows.Forms.Button UprawnieniaButton;
     }
 }
 
