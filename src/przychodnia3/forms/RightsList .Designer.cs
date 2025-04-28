@@ -41,8 +41,9 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(910, 66);
+            this.label1.Size = new System.Drawing.Size(718, 54);
             this.label1.TabIndex = 9;
             this.label1.Text = "Lista  uprawnień";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -55,23 +56,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listaUprawnień.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaUprawnień.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.listaUprawnień.Location = new System.Drawing.Point(26, 130);
-            this.listaUprawnień.Margin = new System.Windows.Forms.Padding(4);
+            this.listaUprawnień.Location = new System.Drawing.Point(20, 106);
             this.listaUprawnień.MultiSelect = false;
             this.listaUprawnień.Name = "listaUprawnień";
             this.listaUprawnień.ReadOnly = true;
             this.listaUprawnień.RowHeadersVisible = false;
             this.listaUprawnień.RowHeadersWidth = 51;
             this.listaUprawnień.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaUprawnień.Size = new System.Drawing.Size(858, 373);
+            this.listaUprawnień.Size = new System.Drawing.Size(680, 307);
             this.listaUprawnień.TabIndex = 13;
+            this.listaUprawnień.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUprawnień_CellContentClick);
             // 
             // Cofnij
             // 
             this.Cofnij.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Cofnij.Location = new System.Drawing.Point(773, 543);
+            this.Cofnij.Location = new System.Drawing.Point(606, 418);
+            this.Cofnij.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cofnij.Name = "Cofnij";
-            this.Cofnij.Size = new System.Drawing.Size(125, 34);
+            this.Cofnij.Size = new System.Drawing.Size(94, 28);
             this.Cofnij.TabIndex = 14;
             this.Cofnij.Text = "Cofnij";
             this.Cofnij.UseVisualStyleBackColor = true;
@@ -80,9 +82,10 @@
             // Zarzadzaj
             // 
             this.Zarzadzaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Zarzadzaj.Location = new System.Drawing.Point(602, 543);
+            this.Zarzadzaj.Location = new System.Drawing.Point(466, 418);
+            this.Zarzadzaj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Zarzadzaj.Name = "Zarzadzaj";
-            this.Zarzadzaj.Size = new System.Drawing.Size(165, 34);
+            this.Zarzadzaj.Size = new System.Drawing.Size(136, 28);
             this.Zarzadzaj.TabIndex = 15;
             this.Zarzadzaj.Text = "Zarządzaj uprawnieniami";
             this.Zarzadzaj.UseVisualStyleBackColor = true;
@@ -90,26 +93,28 @@
             // 
             // Przegląd
             // 
-            this.Przegląd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Przegląd.Location = new System.Drawing.Point(12, 543);
+            this.Przegląd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Przegląd.Location = new System.Drawing.Point(20, 418);
+            this.Przegląd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Przegląd.Name = "Przegląd";
-            this.Przegląd.Size = new System.Drawing.Size(165, 34);
+            this.Przegląd.Size = new System.Drawing.Size(202, 28);
             this.Przegląd.TabIndex = 16;
-            this.Przegląd.Text = "Przegląd użytkowników";
+            this.Przegląd.Text = "Przegląd użytkowników z uprawnieniem";
             this.Przegląd.UseVisualStyleBackColor = true;
             this.Przegląd.Click += new System.EventHandler(this.Przegląd_Click);
             // 
             // RightsList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(910, 589);
+            this.ClientSize = new System.Drawing.Size(718, 457);
             this.Controls.Add(this.Przegląd);
             this.Controls.Add(this.Zarzadzaj);
             this.Controls.Add(this.Cofnij);
             this.Controls.Add(this.listaUprawnień);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "RightsList";
             this.Text = "RightsList";
             ((System.ComponentModel.ISupportInitialize)(this.listaUprawnień)).EndInit();

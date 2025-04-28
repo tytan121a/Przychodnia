@@ -47,7 +47,7 @@
             this.wyszukajText.Name = "wyszukajText";
             this.wyszukajText.Size = new System.Drawing.Size(407, 22);
             this.wyszukajText.TabIndex = 0;
-            this.wyszukajText.TextChanged += new System.EventHandler(this.wyszukajText_TextChanged);
+            
             // 
             // label1
             // 
@@ -112,8 +112,7 @@
             this.listaUzytkownikow.RowHeadersWidth = 51;
             this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listaUzytkownikow.Size = new System.Drawing.Size(868, 465);
-            this.listaUzytkownikow.TabIndex = 5;
-            this.listaUzytkownikow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaUzytkownikow_CellContentClick);
+            
             // 
             // Podglad
             // 

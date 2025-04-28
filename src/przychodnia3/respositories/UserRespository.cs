@@ -403,6 +403,68 @@ namespace przychodnia3.respositories
 
         }
 
+        public List<User> GetUsersByRoles(List<int> rolesIds)
+        {
+            List<User> users = new List<User>();
+
+            if (rolesIds == null || rolesIds.Count == 0)
+            {
+                return users;
+            }
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Dynamiczne parametry  IN (@p0, @p1, @p2, ...)
+                    var parameters = new List<string>();
+                    for (int i = 0; i < rolesIds.Count; i++)
+                    {
+                        parameters.Add("@p" + i);
+                    }
+                    string param = string.Join(", ", parameters);
+
+                    string sql = $@"
+                        SELECT *
+                        FROM Tbl_Uzytkownicy
+                        WHERE IdRoli IN ({param}) AND CzyZapomniany = 0";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        for (int i = 0; i < rolesIds.Count; i++)
+                        {
+                            command.Parameters.AddWithValue("@p" + i, rolesIds[i]);
+                        }
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                User user = new User();
+                                user.IdUzytkownika = reader.GetInt32(0);
+                                user.Imie = reader.GetString(3);
+                                user.Nazwisko = reader.GetString(4);
+                                user.Email = reader.GetString(9);
+                                user.NrTelefonu = reader.GetString(10);
+                                user.IdRoli = reader.GetInt32(14);
+
+                                users.Add(user);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas pobierania użytkowników dla ról: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return users;
+        }
+
+
     }
 
 }

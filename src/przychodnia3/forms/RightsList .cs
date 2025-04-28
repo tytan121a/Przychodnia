@@ -23,20 +23,22 @@ namespace przychodnia3
         private void ReadRights()
         {
             DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Numer uprawnienia");
             dataTable.Columns.Add("Nazwa uprawnienia");
             dataTable.Columns.Add("Opis uprawnienia");
 
 
             var repo = new RightsRepository();
-            var users = repo.GetRights();
+            var uprawnienia = repo.GetRights();
 
 
-            foreach (var user in users)
+            foreach (var upr in uprawnienia)
             {
                 var row = dataTable.NewRow();
 
-                row["Nazwa uprawnienia"] = user.Uprawnienie;
-                row["Opis uprawnienia"] = user.OpisUprawnienia;
+                row["Numer uprawnienia"] = upr.IdUprawnienia;
+                row["Nazwa uprawnienia"] = upr.Uprawnienie;
+                row["Opis uprawnienia"] = upr.OpisUprawnienia;
 
 
                 dataTable.Rows.Add(row);
@@ -60,11 +62,24 @@ namespace przychodnia3
 
         private void Przegląd_Click(object sender, EventArgs e)
         {
-            UsersRights form = new UsersRights();
+            var val = this.listaUprawnień.SelectedRows[0].Cells[0].Value.ToString();
+            var name = this.listaUprawnień.SelectedRows[0].Cells[2].Value.ToString();
+            if (val == null) return;
+            int uprId = int.Parse(val);
+
+            var repoRights = new RightsRepository();
+            List<int> roleWithRights = repoRights.GetRoleWithRights(uprId);
+            
+            UsersRights form = new UsersRights(name, roleWithRights);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 ReadRights();
             }
+        }
+
+        private void listaUprawnień_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -111,15 +111,7 @@ namespace przychodnia3
                 listaUzytkownikow.DataSource = dataTable;
 
         }
-        private void wyszukajText_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void listaUzytkownikow_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void Podglad_Click(object sender, EventArgs e)
         {

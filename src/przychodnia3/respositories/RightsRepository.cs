@@ -25,9 +25,9 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Tbl_Uprawnienia AND Tbl_Role_Uprawnienia";
+                    string sql = "SELECT * FROM Tbl_Uprawnienia";
                     using (SqlCommand command = new SqlCommand(sql, conn))
-                    {
+                    {   
 
 
 
@@ -57,9 +57,131 @@ namespace przychodnia3.respositories
             return RightsList;
         }
 
-        public Uprawnienia GetRoleRights()
+        public List<String> GetRoleRights(int idRoli)
         {
+            List<String> RightsList = new List<String>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT RU.IdRoli, U.* FROM Tbl_Uprawnienia U LEFT JOIN Tbl_Role_Uprawnienia RU ON U.IdUprawnienia = RU.IdUprawnienia WHERE RU.IdRoli = @IdRoli";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
 
+                        command.Parameters.AddWithValue("@IdRoli", idRoli);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            while (reader.Read())
+                            {
+                                RightsList.Add(reader.GetString(2));
+                            }
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd pobierania listy uprawnień roli: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            return RightsList;
         }
+        public void UpdateRoleRights(int idRoli, List<int> newRightsIds)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        try
+                        {
+                            // Usuwanie starych uprawnien
+                            string deleteSql = "DELETE FROM Tbl_Role_Uprawnienia WHERE IdRoli = @IdRoli";
+                            using (SqlCommand deleteCommand = new SqlCommand(deleteSql, conn, transaction))
+                            {
+                                deleteCommand.Parameters.AddWithValue("@IdRoli", idRoli);
+                                deleteCommand.ExecuteNonQuery();
+                            }
+
+                            // Dodanie nowych uprawnien
+                            foreach (int rightId in newRightsIds)
+                            {
+                                string insertSql = "INSERT INTO Tbl_Role_Uprawnienia (IdRoli, IdUprawnienia) VALUES (@IdRoli, @IdUprawnienia)";
+                                using (SqlCommand insertCommand = new SqlCommand(insertSql, conn, transaction))
+                                {
+                                    insertCommand.Parameters.AddWithValue("@IdRoli", idRoli);
+                                    insertCommand.Parameters.AddWithValue("@IdUprawnienia", rightId);
+                                    insertCommand.ExecuteNonQuery();
+                                }
+                            }
+
+                            transaction.Commit();
+                        }
+                        catch (Exception ex)
+                        {                            
+                            transaction.Rollback();
+                            MessageBox.Show("Błąd podczas aktualizacji uprawnień roli: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas łączenia z bazą danych: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public List<int> GetRoleWithRights(int idUprawnienia)
+        {
+            List<int> rolesList = new List<int>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = @"
+                SELECT DISTINCT IdRoli
+                FROM Tbl_Role_Uprawnienia
+                WHERE IdUprawnienia = @IdUprawnienia
+            ";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@IdUprawnienia", idUprawnienia);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                rolesList.Add(reader.GetInt32(reader.GetOrdinal("IdRoli")));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas pobierania ról dla uprawnienia: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return rolesList;
+        }
+
+
+
+
+
     }
+
+
 }
