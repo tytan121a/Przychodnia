@@ -29,8 +29,6 @@ namespace przychodnia3.respositories
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {   
 
-
-
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 

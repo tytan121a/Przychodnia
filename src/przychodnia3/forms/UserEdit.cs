@@ -83,7 +83,7 @@ namespace przychodnia3
             user.NrTelefonu = this.numerTelefonu.Text;
 
             var repoRole = new RoleRespository();
-            user.IdRoli = repoRole.GetRoleId(this.rola.Text);
+            user.IdRoli = repoRole.GetRoleId(this.rola.SelectedItem.ToString());
 
             var repo = new UserRespository();
             repo.UpdateUser(user);

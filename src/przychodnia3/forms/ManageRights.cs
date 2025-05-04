@@ -75,6 +75,7 @@ namespace przychodnia3.models
             var repoRole = new RoleRespository();
 
             repoRights.UpdateRoleRights(repoRole.GetRoleId(this.rola.Text), uprId);
+            
             this.DialogResult = DialogResult.OK;
 
         }

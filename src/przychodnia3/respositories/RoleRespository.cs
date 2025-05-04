@@ -96,6 +96,8 @@ namespace przychodnia3.respositories
                         {
                             if (reader.Read())
                             {
+                                MessageBox.Show("W if, " + reader.GetInt32(0).ToString());
+
                                 return reader.GetInt32(0);
                             }
                         }

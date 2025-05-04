@@ -240,7 +240,7 @@ namespace przychodnia3.respositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Login=@Login, Haslo=@Haslo, Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu WHERE IdUzytkownika = @id AND CzyZapomniany=0";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Login=@Login, Haslo=@Haslo, Imie=@Imie, Nazwisko=@Nazwisko, Pesel=@Pesel, DataUrodzenia=@DataUrodzenia, IdPlci=@IdPlci, Email=@Email, NrTelefonu=@NrTelefonu, IdRoli=@IdRoli WHERE IdUzytkownika = @id AND CzyZapomniany=0";
 
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
@@ -258,6 +258,8 @@ namespace przychodnia3.respositories
                         command.Parameters.AddWithValue("@IdPlci", user.IdPlci);
                         command.Parameters.AddWithValue("@Email", user.Email);
                         command.Parameters.AddWithValue("@NrTelefonu", user.NrTelefonu);
+                        command.Parameters.AddWithValue("@IdRoli", user.IdRoli);
+
 
                         command.ExecuteNonQuery();
 
