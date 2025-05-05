@@ -59,6 +59,12 @@ namespace przychodnia3.models
                 MessageBox.Show("Wybierz role do edycji");
                 return;
             }
+            if(Id1.Checked == false && Id2.Checked == false && Id3.Checked == false && Id4.Checked == false && Id5.Checked == false && Id6.Checked == false && Id7.Checked == false && Id8.Checked == false && Id9.Checked == false && Id10.Checked == false)
+            {
+                MessageBox.Show("Użytkownik musi posiadać przynajmniej jedno uprawnienie");
+                return;
+
+            }
             List<int> uprId = new List<int>();
             if (this.Id1.Checked == true) uprId.Add(1);
             if (this.Id2.Checked == true) uprId.Add(2);
