@@ -495,14 +495,15 @@ namespace Przychodnia.repositories
                                 user.NrTelefonu = reader.GetString(10);
                                 user.CzyZapomniany = reader.GetBoolean(11);
                                 user.IdRoli = reader.GetInt32(14);
+                                user.BledneLogowania = reader.GetInt32(15);
+                                user.ZablokowaneDo = reader.IsDBNull(16) ? (DateTime?)null : reader.GetDateTime(16);
+                                user.HasloOstatnioZmienione = reader.GetBoolean(17);
 
                                 return user;
                             }
                         }
                     }
-
                 }
-
             }
             catch (Exception ex)
             {

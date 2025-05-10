@@ -34,9 +34,27 @@ namespace Przychodnia.forms
                 MessageBox.Show("Podany login nie istnieje w systemie. Sprawdź dane i spróbuj ponownie.");
                 return;
             }
+            if (user.ZablokowaneDo != null && user.ZablokowaneDo > DateTime.Now)
+            {
+                MessageBox.Show($"Twoje konto jest zablokowane do: " + user.ZablokowaneDo);
+                return;
+
+            }
             if (user.Haslo != this.pass.Text)
             {
-                MessageBox.Show($"Niepoprawne hasło. Pozostały 2 próby logowania");
+                var repoPass = new PasswordRepository();
+                repoPass.IncreaseUncorrect(login);
+                var triesLeft = repoPass.GetNumOfUncorrectPass(login);
+                if (triesLeft == 3)
+                {
+                    repoPass.BlockLogin(login);
+                    repoPass.SetUncorrectToZero(login);
+                    MessageBox.Show("Twoje konto zostało tymczasowo zablokowane z powodu 3 nieudanych prób logowania. Spróbuj ponownie później");
+                }
+                else
+                {
+                    MessageBox.Show($"Niepoprawne hasło. Pozostało {3 - triesLeft} prób logowania");
+                }
                 return;
             }
             login = this.logint.Text;

@@ -23,5 +23,8 @@ namespace Przychodnia.models
         public DateTime? DataZapomnienia { get; set; }
         public int? KtoZapomnial { get; set; }
         public int IdRoli { get; set; }
+        public int BledneLogowania { get; set; }
+        public DateTime? ZablokowaneDo { get; set; }
+        public bool HasloOstatnioZmienione { get; set; }
     }
 }

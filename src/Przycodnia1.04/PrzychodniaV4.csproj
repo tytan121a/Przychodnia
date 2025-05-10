@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="repositories\AddressRepository.cs" />
     <Compile Include="repositories\GenderRepository.cs" />
+    <Compile Include="repositories\PasswordRepository.cs" />
     <Compile Include="repositories\RightsRepository.cs" />
     <Compile Include="repositories\RoleRepository.cs" />
     <Compile Include="repositories\UserRepository.cs" />
