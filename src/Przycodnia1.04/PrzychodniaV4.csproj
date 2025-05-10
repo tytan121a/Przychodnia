@@ -70,6 +70,12 @@
     <Compile Include="forms\ManageRights.Designer.cs">
       <DependentUpon>ManageRights.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\RecoverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\RecoverForm.Designer.cs">
+      <DependentUpon>RecoverForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\UserAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ManageRights.resx">
       <DependentUpon>ManageRights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RecoverForm.resx">
+      <DependentUpon>RecoverForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>

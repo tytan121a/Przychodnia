@@ -15,7 +15,6 @@ namespace Przychodnia.functions
         private static readonly string lowerChars = "abcdefghijklmnopqrstuvwxyz";
         private static readonly string digits = "0123456789";
         private static readonly string specialChars = "-_!*#$&";
-        private static readonly string letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private static readonly Random random = new Random();
 
         public String GeneratePassword() {

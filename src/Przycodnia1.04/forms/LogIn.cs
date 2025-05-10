@@ -79,7 +79,10 @@ namespace Przychodnia.forms
             return true;
         }
 
-
-
+        private void recover_Click(object sender, EventArgs e)
+        {
+            RecoverForm form = new RecoverForm();
+            form.ShowDialog();
+        }
     }
 }
