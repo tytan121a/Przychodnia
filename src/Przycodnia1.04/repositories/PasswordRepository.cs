@@ -1,4 +1,5 @@
-﻿using Przychodnia.models;
+﻿using Przychodnia.forms;
+using Przychodnia.models;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -137,5 +138,29 @@ namespace Przychodnia.repositories
                 MessageBox.Show("Błąd podczas zmiany flagi zmiany hasła: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public void ChangePassword(string login, string Haslo)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 0 WHERE Login = @Login";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@Haslo", Haslo);
+                        command.Parameters.AddWithValue("@Login", login);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas zmiany hasła: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

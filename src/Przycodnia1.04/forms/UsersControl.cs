@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Przychodnia.functions;
+using Przychodnia.models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Przychodnia.forms
 {
@@ -133,6 +136,32 @@ namespace Przychodnia.forms
                 dataTable.Rows.Add(row);
             }
             listaUzytkownikow.DataSource = dataTable;
+        }
+
+        private void ForceRecoverPass_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz wymusić zmianę hasła tego użytkownika?", "Wymuszenie Zmiany Hasła", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
+                if (val == null) return;
+                int clientId = int.Parse(val);
+
+                var repoUser = new UserRepository();
+                User user = repoUser.GetUser(clientId);
+                if (user == null)
+                {
+                    MessageBox.Show("Użytkownik o podanym loginie nie istnieje");
+                    return;
+                }
+
+                Password passGen = new Password();
+                string pass = passGen.GeneratePassword();
+                //Wysłanie na maila
+                //Aktualizacja hasła
+                var repoPassword = new PasswordRepository();
+                repoPassword.ChangePasswordAndFlagChange(user.Login, pass);
+                MessageBox.Show("Nowe hasło zostało wysłane na adres e-mail użytkownika." + pass);
+            }
         }
     }
 }

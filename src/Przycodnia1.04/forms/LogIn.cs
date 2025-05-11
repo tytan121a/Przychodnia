@@ -58,6 +58,14 @@ namespace Przychodnia.forms
                 return;
             }
             login = this.logint.Text;
+            if(user.HasloOstatnioZmienione)
+            {
+                ChangePassword form = new ChangePassword(login);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
 

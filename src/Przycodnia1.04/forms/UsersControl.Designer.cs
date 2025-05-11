@@ -36,13 +36,14 @@
             this.dodajUzytkownikow = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.wyszukajText = new System.Windows.Forms.TextBox();
+            this.ForceRecoverPass = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).BeginInit();
             this.SuspendLayout();
             // 
             // ZapomnianiUzytkownicy
             // 
             this.ZapomnianiUzytkownicy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ZapomnianiUzytkownicy.Location = new System.Drawing.Point(53, 662);
+            this.ZapomnianiUzytkownicy.Location = new System.Drawing.Point(53, 666);
             this.ZapomnianiUzytkownicy.Margin = new System.Windows.Forms.Padding(4);
             this.ZapomnianiUzytkownicy.Name = "ZapomnianiUzytkownicy";
             this.ZapomnianiUzytkownicy.Size = new System.Drawing.Size(233, 42);
@@ -54,7 +55,7 @@
             // Podglad
             // 
             this.Podglad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Podglad.Location = new System.Drawing.Point(1159, 662);
+            this.Podglad.Location = new System.Drawing.Point(852, 666);
             this.Podglad.Margin = new System.Windows.Forms.Padding(4);
             this.Podglad.Name = "Podglad";
             this.Podglad.Size = new System.Drawing.Size(167, 42);
@@ -79,7 +80,7 @@
             this.listaUzytkownikow.RowHeadersVisible = false;
             this.listaUzytkownikow.RowHeadersWidth = 51;
             this.listaUzytkownikow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.listaUzytkownikow.Size = new System.Drawing.Size(1272, 507);
+            this.listaUzytkownikow.Size = new System.Drawing.Size(965, 511);
             this.listaUzytkownikow.TabIndex = 18;
             // 
             // wyszukajButton
@@ -96,10 +97,10 @@
             // edytujUzytkownikow
             // 
             this.edytujUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.edytujUzytkownikow.Location = new System.Drawing.Point(1159, 79);
+            this.edytujUzytkownikow.Location = new System.Drawing.Point(852, 94);
             this.edytujUzytkownikow.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.edytujUzytkownikow.Name = "edytujUzytkownikow";
-            this.edytujUzytkownikow.Size = new System.Drawing.Size(167, 58);
+            this.edytujUzytkownikow.Size = new System.Drawing.Size(167, 41);
             this.edytujUzytkownikow.TabIndex = 13;
             this.edytujUzytkownikow.Text = "Edytuj użytkoników";
             this.edytujUzytkownikow.UseVisualStyleBackColor = true;
@@ -108,10 +109,10 @@
             // dodajUzytkownikow
             // 
             this.dodajUzytkownikow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dodajUzytkownikow.Location = new System.Drawing.Point(984, 79);
+            this.dodajUzytkownikow.Location = new System.Drawing.Point(677, 94);
             this.dodajUzytkownikow.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dodajUzytkownikow.Name = "dodajUzytkownikow";
-            this.dodajUzytkownikow.Size = new System.Drawing.Size(167, 58);
+            this.dodajUzytkownikow.Size = new System.Drawing.Size(167, 41);
             this.dodajUzytkownikow.TabIndex = 12;
             this.dodajUzytkownikow.Text = "Dodaj użytkoników";
             this.dodajUzytkownikow.UseVisualStyleBackColor = true;
@@ -124,7 +125,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1399, 76);
+            this.label1.Size = new System.Drawing.Size(1092, 76);
             this.label1.TabIndex = 11;
             this.label1.Text = "Lista użytkowników";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -134,13 +135,24 @@
             this.wyszukajText.Location = new System.Drawing.Point(197, 103);
             this.wyszukajText.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.wyszukajText.Name = "wyszukajText";
-            this.wyszukajText.Size = new System.Drawing.Size(541, 22);
+            this.wyszukajText.Size = new System.Drawing.Size(472, 22);
             this.wyszukajText.TabIndex = 10;
+            // 
+            // ForceRecoverPass
+            // 
+            this.ForceRecoverPass.Location = new System.Drawing.Point(708, 665);
+            this.ForceRecoverPass.Name = "ForceRecoverPass";
+            this.ForceRecoverPass.Size = new System.Drawing.Size(137, 43);
+            this.ForceRecoverPass.TabIndex = 19;
+            this.ForceRecoverPass.Text = "Wymuś odzyskanie";
+            this.ForceRecoverPass.UseVisualStyleBackColor = true;
+            this.ForceRecoverPass.Click += new System.EventHandler(this.ForceRecoverPass_Click);
             // 
             // UsersControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ForceRecoverPass);
             this.Controls.Add(this.ZapomnianiUzytkownicy);
             this.Controls.Add(this.Podglad);
             this.Controls.Add(this.listaUzytkownikow);
@@ -151,7 +163,7 @@
             this.Controls.Add(this.wyszukajText);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsersControl";
-            this.Size = new System.Drawing.Size(1399, 732);
+            this.Size = new System.Drawing.Size(1092, 736);
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Button dodajUzytkownikow;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox wyszukajText;
+        private System.Windows.Forms.Button ForceRecoverPass;
     }
 }

@@ -87,7 +87,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1396, 76);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Lista uprawnien";
+            this.label1.Text = "Lista uprawnień";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // RightsControl

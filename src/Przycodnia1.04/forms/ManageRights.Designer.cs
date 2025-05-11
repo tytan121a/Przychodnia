@@ -51,14 +51,14 @@
             this.rola.Location = new System.Drawing.Point(147, 139);
             this.rola.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.rola.Name = "rola";
-            this.rola.Size = new System.Drawing.Size(240, 28);
+            this.rola.Size = new System.Drawing.Size(240, 33);
             this.rola.TabIndex = 68;
             this.rola.SelectedIndexChanged += new System.EventHandler(this.rola_SelectedIndexChanged);
             // 
             // Zapisz
             // 
             this.Zapisz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Zapisz.Location = new System.Drawing.Point(419, 604);
+            this.Zapisz.Location = new System.Drawing.Point(605, 575);
             this.Zapisz.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Zapisz.Name = "Zapisz";
             this.Zapisz.Size = new System.Drawing.Size(167, 42);
@@ -70,7 +70,7 @@
             // Anuluj
             // 
             this.Anuluj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Anuluj.Location = new System.Drawing.Point(592, 604);
+            this.Anuluj.Location = new System.Drawing.Point(778, 575);
             this.Anuluj.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Anuluj.Name = "Anuluj";
             this.Anuluj.Size = new System.Drawing.Size(167, 42);
@@ -86,7 +86,7 @@
             this.Id10.Location = new System.Drawing.Point(419, 533);
             this.Id10.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id10.Name = "Id10";
-            this.Id10.Size = new System.Drawing.Size(180, 24);
+            this.Id10.Size = new System.Drawing.Size(219, 29);
             this.Id10.TabIndex = 65;
             this.Id10.Text = "ShowUsersWithRight";
             this.Id10.UseVisualStyleBackColor = true;
@@ -98,7 +98,7 @@
             this.Id9.Location = new System.Drawing.Point(419, 490);
             this.Id9.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id9.Name = "Id9";
-            this.Id9.Size = new System.Drawing.Size(114, 24);
+            this.Id9.Size = new System.Drawing.Size(138, 29);
             this.Id9.TabIndex = 64;
             this.Id9.Text = "ShowRights";
             this.Id9.UseVisualStyleBackColor = true;
@@ -110,7 +110,7 @@
             this.Id8.Location = new System.Drawing.Point(419, 447);
             this.Id8.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id8.Name = "Id8";
-            this.Id8.Size = new System.Drawing.Size(107, 24);
+            this.Id8.Size = new System.Drawing.Size(126, 29);
             this.Id8.TabIndex = 63;
             this.Id8.Text = "GrantRight";
             this.Id8.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             this.Id7.Location = new System.Drawing.Point(419, 402);
             this.Id7.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id7.Name = "Id7";
-            this.Id7.Size = new System.Drawing.Size(137, 24);
+            this.Id7.Size = new System.Drawing.Size(166, 29);
             this.Id7.TabIndex = 62;
             this.Id7.Text = "ShowUserData";
             this.Id7.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@
             this.Id6.Location = new System.Drawing.Point(419, 361);
             this.Id6.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id6.Name = "Id6";
-            this.Id6.Size = new System.Drawing.Size(126, 24);
+            this.Id6.Size = new System.Drawing.Size(153, 29);
             this.Id6.TabIndex = 61;
             this.Id6.Text = "SearchForgot";
             this.Id6.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             this.Id5.Location = new System.Drawing.Point(419, 319);
             this.Id5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id5.Name = "Id5";
-            this.Id5.Size = new System.Drawing.Size(75, 24);
+            this.Id5.Size = new System.Drawing.Size(90, 29);
             this.Id5.TabIndex = 60;
             this.Id5.Text = "Forget";
             this.Id5.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.Id4.Location = new System.Drawing.Point(419, 274);
             this.Id4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id4.Name = "Id4";
-            this.Id4.Size = new System.Drawing.Size(79, 24);
+            this.Id4.Size = new System.Drawing.Size(97, 29);
             this.Id4.TabIndex = 59;
             this.Id4.Text = "Search";
             this.Id4.UseVisualStyleBackColor = true;
@@ -170,7 +170,7 @@
             this.Id3.Location = new System.Drawing.Point(419, 231);
             this.Id3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id3.Name = "Id3";
-            this.Id3.Size = new System.Drawing.Size(110, 24);
+            this.Id3.Size = new System.Drawing.Size(135, 29);
             this.Id3.TabIndex = 58;
             this.Id3.Text = "ShowUsers";
             this.Id3.UseVisualStyleBackColor = true;
@@ -182,7 +182,7 @@
             this.Id2.Location = new System.Drawing.Point(419, 188);
             this.Id2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id2.Name = "Id2";
-            this.Id2.Size = new System.Drawing.Size(56, 24);
+            this.Id2.Size = new System.Drawing.Size(67, 29);
             this.Id2.TabIndex = 57;
             this.Id2.Text = "Edit";
             this.Id2.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@
             this.Id1.Location = new System.Drawing.Point(419, 145);
             this.Id1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Id1.Name = "Id1";
-            this.Id1.Size = new System.Drawing.Size(57, 24);
+            this.Id1.Size = new System.Drawing.Size(70, 29);
             this.Id1.TabIndex = 56;
             this.Id1.Text = "Add";
             this.Id1.UseVisualStyleBackColor = true;
@@ -216,9 +216,9 @@
             this.Controls.Add(this.Id3);
             this.Controls.Add(this.Id2);
             this.Controls.Add(this.Id1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageRights";
-            this.Size = new System.Drawing.Size(904, 785);
+            this.Size = new System.Drawing.Size(1092, 736);
             this.ResumeLayout(false);
             this.PerformLayout();
 
