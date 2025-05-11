@@ -40,6 +40,7 @@ namespace Przychodnia.forms
                 return;
 
             }
+            login = this.logint.Text;
             if (user.Haslo != this.pass.Text)
             {
                 var repoPass = new PasswordRepository();
@@ -57,7 +58,6 @@ namespace Przychodnia.forms
                 }
                 return;
             }
-            login = this.logint.Text;
             if(user.HasloOstatnioZmienione)
             {
                 ChangePassword form = new ChangePassword(login);

@@ -1,6 +1,5 @@
 ﻿using Przychodnia.models;
 using Przychodnia.functions;
-using Przychodnia.models;
 using Przychodnia.repositories;
 using System;
 using System.Collections.Generic;

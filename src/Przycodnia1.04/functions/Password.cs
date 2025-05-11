@@ -18,7 +18,6 @@ namespace Przychodnia.functions
         private static readonly Random random = new Random();
 
         public String GeneratePassword() {
-            int length = 10;
             string pass = "";
 
             pass += upperChars[random.Next(upperChars.Length)];

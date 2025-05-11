@@ -473,7 +473,7 @@ namespace Przychodnia.repositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Login=@login AND CzyZapomniany=0";
+                    string sql = "SELECT * FROM Tbl_Uzytkownicy WHERE Login=@Login AND CzyZapomniany=0";
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
                         command.Parameters.AddWithValue("@Login", login);
