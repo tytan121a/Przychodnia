@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
 
 namespace Przychodnia.forms
 {
@@ -41,9 +43,15 @@ namespace Przychodnia.forms
             Password passGen = new Password();
             string pass = passGen.GeneratePassword();
             //Wysłanie na maila
+            Mail5 mail5 = new Mail5();
+            string emailBody = $"Witaj {user.Imie},\n\nTwoje nowe hasło to: {pass}";
+            mail5.SendEmail(user.Email, "Odzyskiwanie hasła", emailBody);
             //Aktualizacja hasła
-            var repoPassword = new PasswordRepository();
-            repoPassword.ChangePasswordAndFlagChange(login, pass);
+            var repoPass = new PasswordRepository();
+
+            repoPass.ChangePasswordAndFlagChange(login, pass);
+            repoPass.PutPasswordToHistory(user.IdUzytkownika, pass);
+
             MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " + pass);
         }
     }

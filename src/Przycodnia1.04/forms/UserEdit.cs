@@ -78,9 +78,26 @@ namespace Przychodnia.forms
 
         private void Zapisz_Click(object sender, EventArgs e)
         {
+            var pass = new Password();
+            var repoAddress = new AddressRepository();
+            var repoGender = new GenderRepository();
+            var repoRole = new RoleRepository();
+            var repoUser = new UserRepository();
+            var repoPass = new PasswordRepository();
+
             if (!ValidateInput()) return;
-            Password pass = new Password();
             if (!pass.ValidatePassword(this.haslo.Text)) return;
+            if (user1.Haslo != this.haslo.Text) {
+                //Sprawdzenie czy haslo rozni sie od 3 poprzednich
+                List<string> passwords = repoPass.LastThreePasswords(user1.IdUzytkownika);
+                if (passwords.Contains(this.haslo.Text)){
+                    MessageBox.Show("Nowe hasło nie może być jednym z trzech ostatnich używanych haseł");
+                    return;
+                }
+                repoPass.PutPasswordToHistory(user1.IdUzytkownika, this.haslo.Text);
+
+            }
+
             User user = new User();
             user.IdUzytkownika = user1.IdUzytkownika;
             user.Login = this.login.Text;
@@ -88,23 +105,19 @@ namespace Przychodnia.forms
             user.Imie = this.imie.Text;
             user.Nazwisko = this.nazwisko.Text;
 
-            var repoAddress = new AddressRepository();
             repoAddress.UpdateAddress(user1.IdAdresu, this.miejscowosc.Text, this.kodPocztowy.Text, this.ulica.Text, this.numerPosesji.Text, this.numerLokalu.Text);
 
             user.Pesel = this.pesel.Text;
             user.DataUrodzenia = this.dataUrodzenia.Value;
 
-            var repoGender = new GenderRepository();
             user.IdPlci = repoGender.GetGenderId(this.plec.Text);
 
             user.Email = this.email.Text;
             user.NrTelefonu = this.numerTelefonu.Text;
 
-            var repoRole = new RoleRepository();
             user.IdRoli = repoRole.GetRoleId(this.rola.SelectedItem.ToString());
 
-            var repo = new UserRepository();
-            repo.UpdateUser(user);
+            repoUser.UpdateUser(user);
             MessageBox.Show("Dane zostały pomyślnie zaktualizowane");
 
         }

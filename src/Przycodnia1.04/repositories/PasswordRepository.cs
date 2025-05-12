@@ -100,7 +100,7 @@ namespace Przychodnia.repositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 1 WHERE Login = @Login";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 1, BledneLogowania = 0 WHERE Login = @Login";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
@@ -117,27 +117,6 @@ namespace Przychodnia.repositories
             }
         }
 
-        public void UnflagPasswordChanged(string login)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET HasloOstatnioZmienione = 0 WHERE Login = @Login";
-
-                    using (SqlCommand command = new SqlCommand(sql, conn))
-                    {
-                        command.Parameters.AddWithValue("@Login", login);
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Błąd podczas zmiany flagi zmiany hasła: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         public void ChangePassword(string login, string Haslo)
         {
             try
@@ -145,7 +124,7 @@ namespace Przychodnia.repositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 0 WHERE Login = @Login";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 0, BledneLogowania = 0 WHERE Login = @Login";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
@@ -161,6 +140,66 @@ namespace Przychodnia.repositories
                 MessageBox.Show("Błąd podczas zmiany hasła: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public List<string> LastThreePasswords(int id)
+        {
+            List<string> hasla = new List<string>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT TOP 3 Haslo FROM Tbl_HistoriaHasel WHERE IdUzytkownika = @Id ORDER BY DataZmiany DESC;";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                hasla.Add(reader.GetString(0));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas pobierania haseł: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return hasla;
+        }
+
+
+        public void PutPasswordToHistory(int id, string pass)
+        {
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "INSERT INTO Tbl_HistoriaHasel (IdUzytkownika, Haslo) VALUES (@Id, @pass)";
+
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@Id", id);
+                        command.Parameters.AddWithValue("@pass", pass);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Błąd podczas pobierania haseł: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
     }
 }

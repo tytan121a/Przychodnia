@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Przychodnia.repositories;
 using Przychodnia.functions;
+using Przychodnia.models;
 
 namespace Przychodnia.forms
 {
@@ -24,24 +25,33 @@ namespace Przychodnia.forms
 
         private void NewPassword_Click(object sender, EventArgs e)
         {
-            if (!validateLogin())
-            {
-                return;
-            }
+            if (!validateLogin()) return;
+            
             if(NewPass.Text != RepeatPass.Text)
             {
                 MessageBox.Show("Podane hasła różnią się od siebie.");
                 return;
             }
-            var validPass = new Password();
-            if (!validPass.ValidatePassword(NewPass.Text))
-            {
-                return;
-            }
+
+            var pass = new Password();
+            if (!pass.ValidatePassword(NewPass.Text)) return;
+       
             var repoPass = new PasswordRepository();
 
-            repoPass.ChangePassword(this.login, NewPass.Text);
+            //Sprawdzenie czy haslo rozni sie od 3 poprzednich
+            var repoUser = new UserRepository();
+            User user = repoUser.GetUserByLogin(login);
 
+            List<string> passwords = repoPass.LastThreePasswords(user.IdUzytkownika);
+            if (passwords.Contains(NewPass.Text))
+            {
+                MessageBox.Show("Nowe hasło nie może być jednym z trzech ostatnich używanych haseł");
+                return;
+            }
+            
+            repoPass.ChangePassword(this.login, NewPass.Text);
+            repoPass.PutPasswordToHistory(user.IdUzytkownika, NewPass.Text);
+            MessageBox.Show("Hasło zostało pomyślnie zmienione. Możesz teraz zalogować się przy jego użyciu.");
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

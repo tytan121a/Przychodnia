@@ -29,6 +29,8 @@ namespace Przychodnia.forms
             }
             
             var repoUser = new UserRepository();
+            var repoPass = new PasswordRepository();
+
             User user = repoUser.GetUserByLogin(this.logint.Text);
             if (user == null) {
                 MessageBox.Show("Podany login nie istnieje w systemie. Sprawdź dane i spróbuj ponownie.");
@@ -40,13 +42,13 @@ namespace Przychodnia.forms
                 return;
 
             }
+
             login = this.logint.Text;
             if (user.Haslo != this.pass.Text)
             {
-                var repoPass = new PasswordRepository();
                 repoPass.IncreaseUncorrect(login);
-                var triesLeft = repoPass.GetNumOfUncorrectPass(login);
-                if (triesLeft == 3)
+                var uncorrect = repoPass.GetNumOfUncorrectPass(login);
+                if (uncorrect == 3)
                 {
                     repoPass.BlockLogin(login);
                     repoPass.SetUncorrectToZero(login);
@@ -54,7 +56,7 @@ namespace Przychodnia.forms
                 }
                 else
                 {
-                    MessageBox.Show($"Niepoprawne hasło. Pozostało {3 - triesLeft} prób logowania");
+                    MessageBox.Show($"Niepoprawne hasło. Pozostało {3 - uncorrect} prób logowania");
                 }
                 return;
             }
@@ -66,6 +68,7 @@ namespace Przychodnia.forms
                     this.DialogResult = DialogResult.OK;
                 }
             }
+            repoPass.SetUncorrectToZero(login);
             this.DialogResult = DialogResult.OK;
             this.Close();
 

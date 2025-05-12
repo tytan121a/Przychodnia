@@ -45,8 +45,15 @@ namespace Przychodnia.forms
 
         private void Zapisz_Click(object sender, EventArgs e)
         {
+            var pass = new Password();
+            var repoAddress = new AddressRepository();
+            var repoGender = new GenderRepository();
+            var repoRole = new RoleRepository();
+            var repoUser = new UserRepository();
+            var repoPass = new PasswordRepository();
+
             if (!ValidateInput()) return;
-            Password pass = new Password();
+            
             if (!pass.ValidatePassword(this.haslo.Text)) return;
             Address adres = new Address();
             adres.Miejscowosc = this.miejscowosc.Text;
@@ -54,10 +61,9 @@ namespace Przychodnia.forms
             adres.Ulica = this.ulica.Text;
             adres.NrPosesji = this.numerPosesji.Text;
             adres.NrLokalu = this.numerLokalu.Text;
-            var repoAdres = new AddressRepository();
-            repoAdres.CreateAddress(adres);
+            repoAddress.CreateAddress(adres);
 
-            int addressID = repoAdres.GetAddressId(adres.Miejscowosc, adres.KodPocztowy, adres.Ulica, adres.NrPosesji, adres.NrLokalu);
+            int addressID = repoAddress.GetAddressId(adres.Miejscowosc, adres.KodPocztowy, adres.Ulica, adres.NrPosesji, adres.NrLokalu);
             if (addressID == -1) return;
 
             User user = new User();
@@ -68,19 +74,17 @@ namespace Przychodnia.forms
             user.IdAdresu = addressID;
             user.Pesel = this.pesel.Text;
             user.DataUrodzenia = this.dataUrodzenia.Value;
-
-            var repoGender = new GenderRepository();
             user.IdPlci = repoGender.GetGenderId(this.plec.Text);
-
             user.Email = this.email.Text;
             user.NrTelefonu = this.numerTelefonu.Text;
-
-            var repoRole = new RoleRepository();
             user.IdRoli = repoRole.GetRoleId(this.rola.Text);
 
+            repoUser.CreateUser(user);
 
-            var repo = new UserRepository();
-            repo.CreateUser(user);
+
+            User user1 = repoUser.GetUserByLogin(this.login.Text);
+            repoPass.PutPasswordToHistory(user1.IdUzytkownika, this.haslo.Text);
+
         }
 
 
@@ -114,11 +118,7 @@ namespace Przychodnia.forms
                 MessageBox.Show("Login może zawierać tylko litery i cyfry!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            if (!Regex.IsMatch(this.haslo.Text, "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,15}$"))
-            {
-                MessageBox.Show("Hasło musi mieć 8-15 znaków, min. 1 dużą literę, cyfrę i znak specjalny!", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
+            
             if (string.IsNullOrWhiteSpace(this.imie.Text) || this.imie.Text.Length < 2)
             {
                 MessageBox.Show("Imię musi mieć co najmniej 2 znaki.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);

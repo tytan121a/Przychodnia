@@ -140,28 +140,31 @@ namespace Przychodnia.forms
 
         private void ForceRecoverPass_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes == MessageBox.Show("Czy na pewno chcesz wymusić zmianę hasła tego użytkownika?", "Wymuszenie Zmiany Hasła", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            if (DialogResult.Yes != MessageBox.Show("Czy na pewno chcesz wymusić zmianę hasła tego użytkownika?", "Wymuszenie Zmiany Hasła", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) return;
+            
+            var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
+            if (val == null) return;
+            int clientId = int.Parse(val);
+
+            var repoUser = new UserRepository();
+            User user = repoUser.GetUser(clientId);
+            if (user == null)
             {
-                var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
-                if (val == null) return;
-                int clientId = int.Parse(val);
-
-                var repoUser = new UserRepository();
-                User user = repoUser.GetUser(clientId);
-                if (user == null)
-                {
-                    MessageBox.Show("Użytkownik o podanym loginie nie istnieje");
-                    return;
-                }
-
-                Password passGen = new Password();
-                string pass = passGen.GeneratePassword();
-                //Wysłanie na maila
-                //Aktualizacja hasła
-                var repoPassword = new PasswordRepository();
-                repoPassword.ChangePasswordAndFlagChange(user.Login, pass);
-                MessageBox.Show("Nowe hasło zostało wysłane na adres e-mail użytkownika." + pass);
+                MessageBox.Show("Użytkownik o podanym loginie nie istnieje");
+                return;
             }
+
+            Password passGen = new Password();
+            string pass = passGen.GeneratePassword();
+            //Wysłanie na maila
+            Mail5 mail5 = new Mail5();
+            string emailBody = $"Witaj {user.Imie},\n\nTwoje nowe hasło to: {pass}";
+            mail5.SendEmail(user.Email, "Odzyskiwanie hasła", emailBody);
+            //Aktualizacja hasła
+            var repoPassword = new PasswordRepository();
+            repoPassword.ChangePasswordAndFlagChange(user.Login, pass);
+            MessageBox.Show("Nowe hasło zostało wysłane na adres e-mail użytkownika." + pass);
+            
         }
     }
 }
