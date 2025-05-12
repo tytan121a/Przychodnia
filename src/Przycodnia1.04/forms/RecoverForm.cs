@@ -24,6 +24,8 @@ namespace Przychodnia.forms
 
         private void recoverButton_Click(object sender, EventArgs e)
         {
+            if (!validateTB()) return;
+
             string email = this.emailTB.Text;
             string login = this.loginTB.Text;
 
@@ -50,8 +52,23 @@ namespace Przychodnia.forms
             var repoPass = new PasswordRepository();
 
             repoPass.ChangePasswordAndFlagChange(login, pass);
-
+            
             MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " + pass);
+        }
+
+        private bool validateTB()
+        {
+            if (string.IsNullOrWhiteSpace(this.loginTB.Text))
+            {
+                MessageBox.Show("Pole login jest wymagane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(this.emailTB.Text))
+            {
+                MessageBox.Show("Pole email jest wymagane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

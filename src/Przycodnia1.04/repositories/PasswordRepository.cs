@@ -100,7 +100,7 @@ namespace Przychodnia.repositories
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 1, BledneLogowania = 0 WHERE Login = @Login";
+                    string sql = "UPDATE Tbl_Uzytkownicy SET Haslo = @Haslo, HasloOstatnioZmienione = 1, BledneLogowania = 0, ZablokowaneDo=null WHERE Login = @Login";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {

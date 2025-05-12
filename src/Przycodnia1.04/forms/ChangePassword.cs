@@ -25,11 +25,11 @@ namespace Przychodnia.forms
 
         private void NewPassword_Click(object sender, EventArgs e)
         {
-            if (!validateLogin()) return;
+            if (!validateTB()) return;
             
             if(NewPass.Text != RepeatPass.Text)
             {
-                MessageBox.Show("Podane hasła różnią się od siebie.");
+                MessageBox.Show("Hasła nie są identyczne. Wprowadź ponownie.");
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace Przychodnia.forms
             this.Close();
         }
 
-        private bool validateLogin()
+        private bool validateTB()
         {
             if (string.IsNullOrWhiteSpace(this.NewPass.Text))
             {
