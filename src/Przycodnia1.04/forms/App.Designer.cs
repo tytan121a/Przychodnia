@@ -115,6 +115,7 @@
             this.PatientsButton.TabIndex = 4;
             this.PatientsButton.Text = "Pacjenci";
             this.PatientsButton.UseVisualStyleBackColor = false;
+            this.PatientsButton.Visible = false;
             // 
             // PermissionButton
             // 

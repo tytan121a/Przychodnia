@@ -26,17 +26,14 @@ namespace Przychodnia.forms
             RoleName = repoRole.GetRoleName(RoleId);
             this.WelcomeLabel.Text = $"Witaj, {Name}!";
             this.roleLabel.Text = $"Twoja rola: {RoleName}";
-
-            
         }
 
-        public void LoadToPanel(UserControl control) {
+        public void LoadToPanel(UserControl control)
+        {
             mainPanel.Controls.Clear();
             control.Dock = DockStyle.Fill;
             mainPanel.Controls.Add(control);
         }
-
-      
 
         private void PermissionButton_Click(object sender, EventArgs e)
         {

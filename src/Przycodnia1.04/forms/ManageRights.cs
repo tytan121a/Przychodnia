@@ -56,6 +56,8 @@ namespace Przychodnia.forms
             this.Id8.Checked = upr.Contains("GrantRight");
             this.Id9.Checked = upr.Contains("ShowRights");
             this.Id10.Checked = upr.Contains("ShowUsersWithRight");
+            this.Id11.Checked = upr.Contains("ShowRoleRights");
+            this.Id12.Checked = upr.Contains("ForcePassRecover");
 
         }
 
@@ -103,6 +105,9 @@ namespace Przychodnia.forms
             if (this.Id8.Checked == true) uprIds.Add(8);
             if (this.Id9.Checked == true) uprIds.Add(9);
             if (this.Id10.Checked == true) uprIds.Add(10);
+            if (this.Id11.Checked == true) uprIds.Add(11);
+            if (this.Id12.Checked == true) uprIds.Add(12);
+
 
             var repoRights = new RightsRepository();
             var repoRole = new RoleRepository();

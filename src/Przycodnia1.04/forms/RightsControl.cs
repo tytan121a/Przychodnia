@@ -32,6 +32,8 @@ namespace Przychodnia.forms
 
                 if (rights.Contains("ShowRights")) ReadRights();
                 if (!rights.Contains("ShowUsersWithRight")) this.UsersWithRightsButton.Visible = false;
+                if (!rights.Contains("ShowRoleRights")) this.manageRightsButton.Visible = false;
+
             }
             else
             {

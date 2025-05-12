@@ -43,10 +43,7 @@ namespace Przychodnia.forms
                 }
                 if (!rights.Contains("SearchForgot")) this.ForgotUsers.Visible = false;
                 if (!rights.Contains("ShowUserData")) this.UserDataButton.Visible = false;
-
-
-
-
+                if (!rights.Contains("ForcePassRecover")) this.ForceRecoverPassButton.Visible = false;
 
             }
             else
