@@ -20,7 +20,26 @@ namespace Przychodnia.forms
             var repoRole = new RoleRepository();
             foreach (Role rola in repoRole.GetRole())
             {
-                this.rola.Items.Add(rola.NazwaRoli);
+                this.role.Items.Add(rola.NazwaRoli);
+            }
+            this.Load += RightsControl_Load;
+        }
+
+        private void RightsControl_Load(object sender, EventArgs e)
+        {
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                var id = appForm.RoleId;
+
+                var repoRights = new RightsRepository();
+                List<string> rights = repoRights.GetRoleRights(id);
+
+                if (!rights.Contains("GrantRight")) this.Save.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się uzyskać referencji do formularza App");
             }
         }
         public void FillUserRight(int idRoli)
@@ -55,14 +74,14 @@ namespace Przychodnia.forms
         private void rola_SelectedIndexChanged(object sender, EventArgs e)
         {
             var repo = new RoleRepository();
-            var idRoli = repo.GetRoleId(this.rola.Text);
+            var idRoli = repo.GetRoleId(this.role.Text);
             FillUserRight(idRoli);
 
         }
 
         private void Zapisz_Click(object sender, EventArgs e)
         {
-            if (this.rola.SelectedItem == null)
+            if (this.role.SelectedItem == null)
             {
                 MessageBox.Show("Wybierz role do edycji");
                 return;
@@ -88,7 +107,7 @@ namespace Przychodnia.forms
             var repoRights = new RightsRepository();
             var repoRole = new RoleRepository();
             MessageBox.Show("Zapisano zmiany");
-            repoRights.UpdateRoleRights(repoRole.GetRoleId(this.rola.Text), uprIds);
+            repoRights.UpdateRoleRights(repoRole.GetRoleId(this.role.Text), uprIds);
         }
     }
 }

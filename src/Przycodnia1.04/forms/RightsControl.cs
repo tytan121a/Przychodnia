@@ -17,7 +17,26 @@ namespace Przychodnia.forms
         public RightsControl()
         {
             InitializeComponent();
-            ReadRights();
+            this.Load += RightsControl_Load;
+        }
+
+        private void RightsControl_Load(object sender, EventArgs e)
+        {
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                var id = appForm.RoleId;
+
+                var repoRights = new RightsRepository();
+                List<string> rights = repoRights.GetRoleRights(id);
+
+                if (rights.Contains("ShowRights")) ReadRights();
+                if (!rights.Contains("ShowUsersWithRight")) this.UsersWithRightsButton.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się uzyskać referencji do formularza App");
+            }
         }
         private void ReadRights()
         {

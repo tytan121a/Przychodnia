@@ -20,6 +20,8 @@ namespace Przychodnia.forms
             this.title2.Text = uprName;
             ReadUsers(roleId);
         }
+
+
         private void ReadUsers(List<int> roleid)
         {
             DataTable dataTable = new DataTable();

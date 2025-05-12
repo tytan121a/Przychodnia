@@ -50,7 +50,6 @@ namespace Przychodnia.forms
             var repoPass = new PasswordRepository();
 
             repoPass.ChangePasswordAndFlagChange(login, pass);
-            repoPass.PutPasswordToHistory(user.IdUzytkownika, pass);
 
             MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " + pass);
         }

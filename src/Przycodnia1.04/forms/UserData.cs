@@ -21,6 +21,25 @@ namespace Przychodnia.forms
             InitializeComponent();
             this.user1 = user1;
             DataUser(user1);
+            this.Load += UsersData_Load;
+        }
+
+        private void UsersData_Load(object sender, EventArgs e)
+        {
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                var id = appForm.RoleId;
+
+                var repoRights = new RightsRepository();
+                List<string> rights = repoRights.GetRoleRights(id);
+
+                if (rights.Contains("Forget")) this.forget.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się uzyskać referencji do formularza App");
+            }
         }
 
         public void DataUser(User user)

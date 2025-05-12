@@ -20,7 +20,39 @@ namespace Przychodnia.forms
         public UsersControl()
         {
             InitializeComponent();
-            ReadUsers();
+            this.Load += UsersControl_Load; 
+        }
+
+        private void UsersControl_Load(object sender, EventArgs e)
+        {
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                var id = appForm.RoleId;
+
+                var repoRights = new RightsRepository();
+                List<string> rights = repoRights.GetRoleRights(id);
+
+                if (rights.Contains("ShowUsers")) ReadUsers();
+                if (!rights.Contains("Add")) this.addUsers.Visible = false;
+                if (!rights.Contains("Edit")) this.editUsers.Visible = false;
+                if (!rights.Contains("Search"))
+                {
+                    this.searchButton.Visible = false;
+                    this.searchText.Visible = false;
+                }
+                if (!rights.Contains("SearchForgot")) this.ForgotUsers.Visible = false;
+                if (!rights.Contains("ShowUserData")) this.UserDataButton.Visible = false;
+
+
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Nie udało się uzyskać referencji do formularza App");
+            }
         }
         private void ReadUsers()
         {
@@ -47,7 +79,7 @@ namespace Przychodnia.forms
 
                 dataTable.Rows.Add(row);
             }
-            this.listaUzytkownikow.DataSource = dataTable;
+            this.UsersList.DataSource = dataTable;
         }
 
         private void ZapomnianiUzytkownicy_Click(object sender, EventArgs e)
@@ -64,7 +96,12 @@ namespace Przychodnia.forms
 
         private void Podglad_Click(object sender, EventArgs e)
         {
-            var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
+            if (this.UsersList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var val = this.UsersList.SelectedRows[0].Cells[0].Value.ToString();
             if (val == null) return;
             int clientId = int.Parse(val);
 
@@ -93,7 +130,12 @@ namespace Przychodnia.forms
 
         private void edytujUzytkownikow_Click(object sender, EventArgs e)
         {
-            var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
+            if (this.UsersList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            var val = this.UsersList.SelectedRows[0].Cells[0].Value.ToString();
             if (val == null) return;
             int clientId = int.Parse(val);
 
@@ -119,7 +161,7 @@ namespace Przychodnia.forms
             dataTable.Columns.Add("Email");
             dataTable.Columns.Add("Numer Telefonu");
 
-            string searchText = wyszukajText.Text.Trim();
+            string searchText = this.searchText.Text.Trim();
             var repo = new UserRepository();
             var users = repo.SearchUsers(searchText);
 
@@ -135,14 +177,19 @@ namespace Przychodnia.forms
 
                 dataTable.Rows.Add(row);
             }
-            listaUzytkownikow.DataSource = dataTable;
+            UsersList.DataSource = dataTable;
         }
 
         private void ForceRecoverPass_Click(object sender, EventArgs e)
         {
+            if (this.UsersList.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego użytkownika.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (DialogResult.Yes != MessageBox.Show("Czy na pewno chcesz wymusić zmianę hasła tego użytkownika?", "Wymuszenie Zmiany Hasła", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) return;
             
-            var val = this.listaUzytkownikow.SelectedRows[0].Cells[0].Value.ToString();
+            var val = this.UsersList.SelectedRows[0].Cells[0].Value.ToString();
             if (val == null) return;
             int clientId = int.Parse(val);
 

@@ -43,7 +43,7 @@ namespace Przychodnia.forms
 
                 dataTable.Rows.Add(row);
             }
-            this.listaUzytkownikow.DataSource = dataTable;
+            this.ForgotUsersList.DataSource = dataTable;
         }
 
         private void Cofnij_Click(object sender, EventArgs e)

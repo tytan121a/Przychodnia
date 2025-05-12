@@ -15,7 +15,7 @@ namespace Przychodnia.forms
     public partial class App : Form
     {
         private String Name;
-        private int RoleId;
+        public int RoleId;
         private String RoleName;
         public App(User user)
         {
@@ -27,6 +27,7 @@ namespace Przychodnia.forms
             this.WelcomeLabel.Text = $"Witaj, {Name}!";
             this.roleLabel.Text = $"Twoja rola: {RoleName}";
 
+            
         }
 
         public void LoadToPanel(UserControl control) {
