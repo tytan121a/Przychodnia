@@ -107,7 +107,11 @@ namespace Przychodnia.forms
             if (this.Id10.Checked == true) uprIds.Add(10);
             if (this.Id11.Checked == true) uprIds.Add(11);
             if (this.Id12.Checked == true) uprIds.Add(12);
-
+            if (this.Id13.Checked == true) uprIds.Add(13);
+            if (this.Id14.Checked == true) uprIds.Add(14);
+            if (this.Id15.Checked == true) uprIds.Add(15);
+            if (this.Id16.Checked == true) uprIds.Add(16);
+            if (this.Id17.Checked == true) uprIds.Add(17);
 
             var repoRights = new RightsRepository();
             var repoRole = new RoleRepository();

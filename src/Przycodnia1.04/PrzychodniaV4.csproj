@@ -78,16 +78,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\ChangePassword.cs">
+    <Compile Include="forms\login\ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\ChangePassword.Designer.cs">
+    <Compile Include="forms\login\ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\ForgotList.cs">
+    <Compile Include="forms\patients\PatientAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\ForgotList.Designer.cs">
+    <Compile Include="forms\patients\PatientAdd.Designer.cs">
+      <DependentUpon>PatientAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\patients\PatientData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\patients\PatientData.Designer.cs">
+      <DependentUpon>PatientData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\patients\PatientEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\patients\PatientEdit.Designer.cs">
+      <DependentUpon>PatientEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\patients\PatientsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\patients\PatientsControl.Designer.cs">
+      <DependentUpon>PatientsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\users\ForgotList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="forms\users\ForgotList.Designer.cs">
       <DependentUpon>ForgotList.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\App.cs">
@@ -96,46 +120,46 @@
     <Compile Include="forms\App.Designer.cs">
       <DependentUpon>App.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\LogIn.cs">
+    <Compile Include="forms\login\LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\LogIn.Designer.cs">
+    <Compile Include="forms\login\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\ManageRights.cs">
+    <Compile Include="forms\rights\ManageRights.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\ManageRights.Designer.cs">
+    <Compile Include="forms\rights\ManageRights.Designer.cs">
       <DependentUpon>ManageRights.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\RecoverForm.cs">
+    <Compile Include="forms\login\RecoverForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\RecoverForm.Designer.cs">
+    <Compile Include="forms\login\RecoverForm.Designer.cs">
       <DependentUpon>RecoverForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\UserAdd.cs">
+    <Compile Include="forms\users\UserAdd.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\UserAdd.Designer.cs">
+    <Compile Include="forms\users\UserAdd.Designer.cs">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\UserData.cs">
+    <Compile Include="forms\users\UserData.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\UserData.Designer.cs">
+    <Compile Include="forms\users\UserData.Designer.cs">
       <DependentUpon>UserData.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\UserEdit.cs">
+    <Compile Include="forms\users\UserEdit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\UserEdit.Designer.cs">
+    <Compile Include="forms\users\UserEdit.Designer.cs">
       <DependentUpon>UserEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\UsersWithRights.cs">
+    <Compile Include="forms\rights\UsersWithRights.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\UsersWithRights.Designer.cs">
+    <Compile Include="forms\rights\UsersWithRights.Designer.cs">
       <DependentUpon>UsersWithRights.cs</DependentUpon>
     </Compile>
     <Compile Include="functions\Hash.cs" />
@@ -144,58 +168,72 @@
     <Compile Include="functions\validation.cs" />
     <Compile Include="models\Address.cs" />
     <Compile Include="models\Gender.cs" />
+    <Compile Include="models\Patient.cs" />
     <Compile Include="models\Permission.cs" />
     <Compile Include="models\Role.cs" />
     <Compile Include="models\Role_Permission.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="forms\RightsControl.cs">
+    <Compile Include="forms\rights\RightsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\RightsControl.Designer.cs">
+    <Compile Include="forms\rights\RightsControl.Designer.cs">
       <DependentUpon>RightsControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\UsersControl.cs">
+    <Compile Include="forms\users\UsersControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="forms\UsersControl.Designer.cs">
+    <Compile Include="forms\users\UsersControl.Designer.cs">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </Compile>
     <Compile Include="repositories\AddressRepository.cs" />
     <Compile Include="repositories\GenderRepository.cs" />
     <Compile Include="repositories\PasswordRepository.cs" />
+    <Compile Include="repositories\PatientRepository.cs" />
     <Compile Include="repositories\RightsRepository.cs" />
     <Compile Include="repositories\RoleRepository.cs" />
     <Compile Include="repositories\UserRepository.cs" />
     <EmbeddedResource Include="forms\App.resx">
       <DependentUpon>App.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\ChangePassword.resx">
+    <EmbeddedResource Include="forms\login\ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\ForgotList.resx">
+    <EmbeddedResource Include="forms\patients\PatientAdd.resx">
+      <DependentUpon>PatientAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\patients\PatientData.resx">
+      <DependentUpon>PatientData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\patients\PatientEdit.resx">
+      <DependentUpon>PatientEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\patients\PatientsControl.resx">
+      <DependentUpon>PatientsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\users\ForgotList.resx">
       <DependentUpon>ForgotList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\LogIn.resx">
+    <EmbeddedResource Include="forms\login\LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\ManageRights.resx">
+    <EmbeddedResource Include="forms\rights\ManageRights.resx">
       <DependentUpon>ManageRights.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\RecoverForm.resx">
+    <EmbeddedResource Include="forms\login\RecoverForm.resx">
       <DependentUpon>RecoverForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\UserAdd.resx">
+    <EmbeddedResource Include="forms\users\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\UserData.resx">
+    <EmbeddedResource Include="forms\users\UserData.resx">
       <DependentUpon>UserData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\UserEdit.resx">
+    <EmbeddedResource Include="forms\users\UserEdit.resx">
       <DependentUpon>UserEdit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\UsersWithRights.resx">
+    <EmbeddedResource Include="forms\rights\UsersWithRights.resx">
       <DependentUpon>UsersWithRights.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -208,10 +246,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="forms\RightsControl.resx">
+    <EmbeddedResource Include="forms\rights\RightsControl.resx">
       <DependentUpon>RightsControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\UsersControl.resx">
+    <EmbeddedResource Include="forms\users\UsersControl.resx">
       <DependentUpon>UsersControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
