@@ -31,16 +31,12 @@ namespace Przychodnia.forms
 
             var repoUser = new UserRepository();
             User user = repoUser.GetUserByLogin(login);
-            if (user == null)
+            if (user == null || user.Email != email)
             {
-                MessageBox.Show("Użytkownik o podanym loginie nie istnieje");
+                MessageBox.Show("Podany login lub email jest nieprawidłowy");
                 return;
             }
-            if(user.Email != email)
-            {
-                MessageBox.Show("Podany email nie pasuje do użytkownika");
-                return;
-            }
+            
 
             Password passGen = new Password();
             string pass = passGen.GeneratePassword();
@@ -53,7 +49,7 @@ namespace Przychodnia.forms
 
             repoPass.ChangePasswordAndFlagChange(login, pass);
             
-            MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " + pass);
+            MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " );
         }
 
         private bool validateTB()

@@ -80,10 +80,17 @@ namespace Przychodnia.forms
             user.IdRoli = repoRole.GetRoleId(this.rola.Text);
 
             repoUser.CreateUser(user);
-
-
+            MessageBox.Show("Pomyślnie dodano użytkownika");
             User user1 = repoUser.GetUserByLogin(this.login.Text);
             repoPass.PutPasswordToHistory(user1.IdUzytkownika, this.haslo.Text);
+
+            UsersControl control = new UsersControl();
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                appForm.LoadToPanel(control);
+            }
+
 
         }
 

@@ -14,8 +14,9 @@ namespace Przychodnia.forms.patients
 {
     public partial class PatientEdit : UserControl
     {
-        public Patient patient;
-        public PatientEdit(Patient patient)
+        //public Patient patient;
+        //public PatientEdit(Patient patient)
+        public PatientEdit()
         {
             InitializeComponent();
             var repoRole = new RoleRepository();
@@ -24,8 +25,8 @@ namespace Przychodnia.forms.patients
                 this.Gender.Items.Add(rola.NazwaRoli);
             }
 
-            this.patient = patient;
-            EditPatient(patient);
+            //this.patient = patient;
+            //EditPatient(patient);
 
         }
 

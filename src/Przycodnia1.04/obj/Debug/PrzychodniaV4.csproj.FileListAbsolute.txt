@@ -122,3 +122,7 @@ C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\bin\Debug\System.R
 C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\bin\Debug\System.ValueTuple.xml
 C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\obj\Debug\PrzychodniaV4.csproj.CopyComplete
+C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\obj\Debug\Przychodnia.forms.patients.PatientAdd.resources
+C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\obj\Debug\Przychodnia.forms.patients.PatientData.resources
+C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\obj\Debug\Przychodnia.forms.patients.PatientEdit.resources
+C:\Users\peorp\OneDrive\Pulpit\Przychodnia\src\Przycodnia1.04\obj\Debug\Przychodnia.forms.patients.PatientsControl.resources

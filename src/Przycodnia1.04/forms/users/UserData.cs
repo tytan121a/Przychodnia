@@ -34,7 +34,7 @@ namespace Przychodnia.forms
                 var repoRights = new RightsRepository();
                 List<string> rights = repoRights.GetRoleRights(id);
 
-                if (rights.Contains("Forget")) this.forget.Visible = false;
+                if (!rights.Contains("Forget")) this.forget.Visible = false;
             }
             else
             {

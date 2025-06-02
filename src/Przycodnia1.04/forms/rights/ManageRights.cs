@@ -58,6 +58,12 @@ namespace Przychodnia.forms
             this.Id10.Checked = upr.Contains("ShowUsersWithRight");
             this.Id11.Checked = upr.Contains("ShowRoleRights");
             this.Id12.Checked = upr.Contains("ForcePassRecover");
+            this.Id13.Checked = upr.Contains("ShowPatients");
+            this.Id14.Checked = upr.Contains("AddPatients");
+            this.Id15.Checked = upr.Contains("EditPatients");
+            this.Id16.Checked = upr.Contains("SearchPatients");
+            this.Id17.Checked = upr.Contains("ShowPatientsData");
+
 
         }
 
@@ -88,7 +94,7 @@ namespace Przychodnia.forms
                 MessageBox.Show("Wybierz role do edycji");
                 return;
             }
-            if (Id1.Checked == false && Id2.Checked == false && Id3.Checked == false && Id4.Checked == false && Id5.Checked == false && Id6.Checked == false && Id7.Checked == false && Id8.Checked == false && Id9.Checked == false && Id10.Checked == false)
+            if (Id1.Checked == false && Id2.Checked == false && Id3.Checked == false && Id4.Checked == false && Id5.Checked == false && Id6.Checked == false && Id7.Checked == false && Id8.Checked == false && Id9.Checked == false && Id10.Checked == false && Id11.Checked == false && Id12.Checked == false && Id13.Checked == false && Id14.Checked == false && Id15.Checked == false && Id16.Checked == false && Id17.Checked == false)
             {
                 MessageBox.Show("Użytkownik musi posiadać przynajmniej jedno uprawnienie");
                 return;

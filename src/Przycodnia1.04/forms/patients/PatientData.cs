@@ -13,13 +13,13 @@ namespace Przychodnia.forms.patients
 {
     public partial class PatientData : UserControl
     {
-        private Patient patient;
-        public PatientData(Patient patient)
+        //private Patient patient;
+        //public PatientData(Patient patient)
+        public PatientData()
         {
             InitializeComponent();
-            this.patient = patient;
-
-            DataPatient(patient);
+            //this.patient = patient;
+            //DataPatient(patient);
         }
 
         //Funkcja wypełniajaca formularz danymi uzytkownika

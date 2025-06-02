@@ -12,7 +12,7 @@ namespace Przychodnia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            //while user==null
             while (true)
             {
                 using (var loginForm = new LogIn())

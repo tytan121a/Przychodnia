@@ -64,6 +64,13 @@ namespace Przychodnia.forms
 
             var repoRole = new RoleRepository();
             this.rola.Text = repoRole.GetRoleName(user.IdRoli);
+
+            UsersControl control = new UsersControl();
+            var appForm = this.FindForm() as App;
+            if (appForm != null)
+            {
+                appForm.LoadToPanel(control);
+            }
         }
         private void Anuluj_Click(object sender, EventArgs e)
         {
