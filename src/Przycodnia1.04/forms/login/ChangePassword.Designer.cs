@@ -114,6 +114,7 @@
             this.NewPass.Location = new System.Drawing.Point(191, 166);
             this.NewPass.Margin = new System.Windows.Forms.Padding(4);
             this.NewPass.Name = "NewPass";
+            this.NewPass.PasswordChar = '*';
             this.NewPass.Size = new System.Drawing.Size(507, 22);
             this.NewPass.TabIndex = 1;
             // 

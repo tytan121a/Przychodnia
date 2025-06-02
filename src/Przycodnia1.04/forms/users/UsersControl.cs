@@ -207,7 +207,7 @@ namespace Przychodnia.forms
             //Aktualizacja hasła
             var repoPassword = new PasswordRepository();
             repoPassword.ChangePasswordAndFlagChange(user.Login, pass);
-            MessageBox.Show("Nowe hasło zostało wysłane na adres e-mail użytkownika.");
+            MessageBox.Show("Nowe hasło zostało wysłane na adres e-mail użytkownika. " + pass);
             
         }
     }

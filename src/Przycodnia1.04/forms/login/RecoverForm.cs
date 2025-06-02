@@ -49,7 +49,7 @@ namespace Przychodnia.forms
 
             repoPass.ChangePasswordAndFlagChange(login, pass);
             
-            MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " );
+            MessageBox.Show("Nowe hasło zostało wysłane na Twój adres e-mail. " +pass);
         }
 
         private bool validateTB()
