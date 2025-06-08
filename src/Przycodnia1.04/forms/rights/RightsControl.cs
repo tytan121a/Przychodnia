@@ -84,15 +84,21 @@ namespace Przychodnia.forms
                 MessageBox.Show("Nie wybrano żadnego uprawnienia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var val = this.RightsDataTable.SelectedRows[0].Cells[0].Value.ToString();
-            var name = this.RightsDataTable.SelectedRows[0].Cells[2].Value.ToString();
-            if (val == null) return;
-            int uprId = int.Parse(val);
+
+            List<int> uprIds = new List<int>();
+
+            foreach (DataGridViewRow row in this.RightsDataTable.SelectedRows)
+            {
+                if (row.Cells[0].Value != null && int.TryParse(row.Cells[0].Value.ToString(), out int id))
+                {
+                    uprIds.Add(id);
+                }
+            }
 
             var repoRights = new RightsRepository();
-            List<int> roleWithRights = repoRights.GetRoleWithRights(uprId);
+            List<int> roleWithRights = repoRights.GetRoleWithRights(uprIds);
 
-            UsersWithRights control = new UsersWithRights(name,roleWithRights);
+            UsersWithRights control = new UsersWithRights(roleWithRights);
 
             var appForm = this.FindForm() as App;
             if (appForm != null)

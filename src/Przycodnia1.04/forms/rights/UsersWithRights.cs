@@ -14,10 +14,9 @@ namespace Przychodnia.forms
 {
     public partial class UsersWithRights : UserControl
     {
-        public UsersWithRights(String uprName, List<int> roleId)
+        public UsersWithRights(List<int> roleId)
         {
             InitializeComponent();
-            this.title2.Text = uprName;
             ReadUsers(roleId);
         }
 

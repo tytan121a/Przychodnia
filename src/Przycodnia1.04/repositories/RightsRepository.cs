@@ -135,30 +135,44 @@ namespace Przychodnia.repositories
             }
         }
 
-        public List<int> GetRoleWithRights(int idUprawnienia)
+        public List<int> GetRoleWithRights(List<int> idsUprawnien)
         {
             List<int> rolesList = new List<int>();
+
+            if (idsUprawnien == null || idsUprawnien.Count == 0)
+                return rolesList;
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = @"
-                SELECT DISTINCT IdRoli
+
+                    // Tworzymy parametry @id0, @id1, ...
+                    string inClause = string.Join(",", idsUprawnien.Select((id, index) => $"@id{index}"));
+                    string sql = $@"
+                SELECT IdRoli
                 FROM Tbl_Role_Uprawnienia
-                WHERE IdUprawnienia = @IdUprawnienia
+                WHERE IdUprawnienia IN ({inClause})
+                GROUP BY IdRoli
+                HAVING COUNT(DISTINCT IdUprawnienia) = @Count
             ";
 
                     using (SqlCommand command = new SqlCommand(sql, conn))
                     {
-                        command.Parameters.AddWithValue("@IdUprawnienia", idUprawnienia);
+                        for (int i = 0; i < idsUprawnien.Count; i++)
+                        {
+                            command.Parameters.AddWithValue($"@id{i}", idsUprawnien[i]);
+                        }
+
+                        command.Parameters.AddWithValue("@Count", idsUprawnien.Count);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                rolesList.Add(reader.GetInt32(reader.GetOrdinal("IdRoli")));
+                                int roleId = reader.GetInt32(reader.GetOrdinal("IdRoli"));
+                                rolesList.Add(roleId);
                             }
                         }
                     }
@@ -166,10 +180,12 @@ namespace Przychodnia.repositories
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Błąd podczas pobierania ról dla uprawnienia: " + ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Błąd podczas pobierania ról z wszystkimi podanymi uprawnieniami: " + ex.Message,
+                    "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return rolesList;
         }
+
     }
 }

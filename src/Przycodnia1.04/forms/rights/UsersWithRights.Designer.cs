@@ -28,23 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.title2 = new System.Windows.Forms.Label();
             this.Cofnij = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.listaUzytkownikow = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).BeginInit();
             this.SuspendLayout();
-            // 
-            // title2
-            // 
-            this.title2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.title2.Location = new System.Drawing.Point(0, 66);
-            this.title2.Name = "title2";
-            this.title2.Size = new System.Drawing.Size(909, 38);
-            this.title2.TabIndex = 20;
-            this.title2.Text = "uprawnienie";
-            this.title2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Cofnij
             // 
@@ -78,7 +66,7 @@
             this.listaUzytkownikow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listaUzytkownikow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaUzytkownikow.Location = new System.Drawing.Point(16, 122);
-            this.listaUzytkownikow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listaUzytkownikow.Margin = new System.Windows.Forms.Padding(4);
             this.listaUzytkownikow.MultiSelect = false;
             this.listaUzytkownikow.Name = "listaUzytkownikow";
             this.listaUzytkownikow.ReadOnly = true;
@@ -92,11 +80,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.title2);
             this.Controls.Add(this.Cofnij);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listaUzytkownikow);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsersWithRights";
             this.Size = new System.Drawing.Size(909, 595);
             this.Load += new System.EventHandler(this.UsersWithRights_Load);
@@ -106,8 +93,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label title2;
         private System.Windows.Forms.Button Cofnij;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView listaUzytkownikow;
