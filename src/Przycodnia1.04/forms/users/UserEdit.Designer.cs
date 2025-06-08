@@ -64,10 +64,10 @@
             // 
             // Anuluj
             // 
-            this.Anuluj.Location = new System.Drawing.Point(668, 323);
-            this.Anuluj.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Anuluj.Location = new System.Drawing.Point(891, 398);
+            this.Anuluj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Anuluj.Name = "Anuluj";
-            this.Anuluj.Size = new System.Drawing.Size(68, 30);
+            this.Anuluj.Size = new System.Drawing.Size(91, 37);
             this.Anuluj.TabIndex = 108;
             this.Anuluj.Text = "Anuluj";
             this.Anuluj.UseVisualStyleBackColor = true;
@@ -75,10 +75,10 @@
             // 
             // Zapisz
             // 
-            this.Zapisz.Location = new System.Drawing.Point(584, 323);
-            this.Zapisz.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Zapisz.Location = new System.Drawing.Point(779, 398);
+            this.Zapisz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Zapisz.Name = "Zapisz";
-            this.Zapisz.Size = new System.Drawing.Size(68, 30);
+            this.Zapisz.Size = new System.Drawing.Size(91, 37);
             this.Zapisz.TabIndex = 107;
             this.Zapisz.Text = "Zapisz";
             this.Zapisz.UseVisualStyleBackColor = true;
@@ -86,150 +86,148 @@
             // 
             // dataUrodzenia
             // 
-            this.dataUrodzenia.Enabled = false;
-            this.dataUrodzenia.Location = new System.Drawing.Point(198, 210);
-            this.dataUrodzenia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataUrodzenia.Location = new System.Drawing.Point(264, 258);
+            this.dataUrodzenia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataUrodzenia.Name = "dataUrodzenia";
-            this.dataUrodzenia.Size = new System.Drawing.Size(151, 20);
+            this.dataUrodzenia.Size = new System.Drawing.Size(200, 22);
             this.dataUrodzenia.TabIndex = 97;
             // 
             // rola
             // 
             this.rola.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.rola.FormattingEnabled = true;
-            this.rola.Location = new System.Drawing.Point(501, 245);
-            this.rola.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rola.Location = new System.Drawing.Point(668, 302);
+            this.rola.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rola.Name = "rola";
-            this.rola.Size = new System.Drawing.Size(121, 21);
+            this.rola.Size = new System.Drawing.Size(160, 24);
             this.rola.TabIndex = 106;
             // 
             // plec
             // 
             this.plec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.plec.FormattingEnabled = true;
-            this.plec.Location = new System.Drawing.Point(502, 206);
-            this.plec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.plec.Location = new System.Drawing.Point(669, 254);
+            this.plec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plec.Name = "plec";
-            this.plec.Size = new System.Drawing.Size(121, 21);
+            this.plec.Size = new System.Drawing.Size(160, 24);
             this.plec.TabIndex = 105;
             // 
             // haslo
             // 
-            this.haslo.Location = new System.Drawing.Point(113, 69);
-            this.haslo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.haslo.Location = new System.Drawing.Point(151, 85);
+            this.haslo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.haslo.MaxLength = 15;
             this.haslo.Name = "haslo";
-            this.haslo.Size = new System.Drawing.Size(236, 20);
+            this.haslo.Size = new System.Drawing.Size(313, 22);
             this.haslo.TabIndex = 93;
             this.haslo.UseSystemPasswordChar = true;
             // 
             // imie
             // 
-            this.imie.Location = new System.Drawing.Point(113, 103);
-            this.imie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imie.Location = new System.Drawing.Point(151, 127);
+            this.imie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.imie.MaxLength = 20;
             this.imie.Name = "imie";
-            this.imie.Size = new System.Drawing.Size(236, 20);
+            this.imie.Size = new System.Drawing.Size(313, 22);
             this.imie.TabIndex = 94;
             // 
             // nazwisko
             // 
-            this.nazwisko.Location = new System.Drawing.Point(113, 142);
-            this.nazwisko.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nazwisko.Location = new System.Drawing.Point(151, 175);
+            this.nazwisko.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nazwisko.MaxLength = 30;
             this.nazwisko.Name = "nazwisko";
-            this.nazwisko.Size = new System.Drawing.Size(236, 20);
+            this.nazwisko.Size = new System.Drawing.Size(313, 22);
             this.nazwisko.TabIndex = 95;
             // 
             // pesel
             // 
-            this.pesel.Location = new System.Drawing.Point(113, 179);
-            this.pesel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pesel.Location = new System.Drawing.Point(151, 220);
+            this.pesel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pesel.MaxLength = 11;
             this.pesel.Name = "pesel";
-            this.pesel.Size = new System.Drawing.Size(236, 20);
+            this.pesel.Size = new System.Drawing.Size(313, 22);
             this.pesel.TabIndex = 96;
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(113, 247);
-            this.email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.email.Location = new System.Drawing.Point(151, 304);
+            this.email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.email.MaxLength = 25;
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(236, 20);
+            this.email.Size = new System.Drawing.Size(313, 22);
             this.email.TabIndex = 98;
             // 
             // numerTelefonu
             // 
-            this.numerTelefonu.Location = new System.Drawing.Point(113, 280);
-            this.numerTelefonu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numerTelefonu.Location = new System.Drawing.Point(151, 345);
+            this.numerTelefonu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerTelefonu.MaxLength = 9;
             this.numerTelefonu.Name = "numerTelefonu";
-            this.numerTelefonu.Size = new System.Drawing.Size(236, 20);
+            this.numerTelefonu.Size = new System.Drawing.Size(313, 22);
             this.numerTelefonu.TabIndex = 99;
             // 
             // miejscowosc
             // 
-            this.miejscowosc.Location = new System.Drawing.Point(502, 32);
-            this.miejscowosc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.miejscowosc.Location = new System.Drawing.Point(669, 39);
+            this.miejscowosc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.miejscowosc.MaxLength = 30;
             this.miejscowosc.Name = "miejscowosc";
-            this.miejscowosc.Size = new System.Drawing.Size(236, 20);
+            this.miejscowosc.Size = new System.Drawing.Size(313, 22);
             this.miejscowosc.TabIndex = 100;
             // 
             // kodPocztowy
             // 
-            this.kodPocztowy.Location = new System.Drawing.Point(502, 69);
-            this.kodPocztowy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.kodPocztowy.Location = new System.Drawing.Point(669, 85);
+            this.kodPocztowy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.kodPocztowy.MaxLength = 6;
             this.kodPocztowy.Name = "kodPocztowy";
-            this.kodPocztowy.Size = new System.Drawing.Size(236, 20);
+            this.kodPocztowy.Size = new System.Drawing.Size(313, 22);
             this.kodPocztowy.TabIndex = 101;
             // 
             // ulica
             // 
-            this.ulica.Location = new System.Drawing.Point(502, 103);
-            this.ulica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ulica.Location = new System.Drawing.Point(669, 127);
+            this.ulica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ulica.MaxLength = 50;
             this.ulica.Name = "ulica";
-            this.ulica.Size = new System.Drawing.Size(236, 20);
+            this.ulica.Size = new System.Drawing.Size(313, 22);
             this.ulica.TabIndex = 102;
             // 
             // numerPosesji
             // 
-            this.numerPosesji.Location = new System.Drawing.Point(502, 142);
-            this.numerPosesji.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numerPosesji.Location = new System.Drawing.Point(669, 175);
+            this.numerPosesji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerPosesji.MaxLength = 10;
             this.numerPosesji.Name = "numerPosesji";
-            this.numerPosesji.Size = new System.Drawing.Size(236, 20);
+            this.numerPosesji.Size = new System.Drawing.Size(313, 22);
             this.numerPosesji.TabIndex = 103;
             // 
             // numerLokalu
             // 
-            this.numerLokalu.Location = new System.Drawing.Point(502, 179);
-            this.numerLokalu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numerLokalu.Location = new System.Drawing.Point(669, 220);
+            this.numerLokalu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numerLokalu.MaxLength = 10;
             this.numerLokalu.Name = "numerLokalu";
-            this.numerLokalu.Size = new System.Drawing.Size(236, 20);
+            this.numerLokalu.Size = new System.Drawing.Size(313, 22);
             this.numerLokalu.TabIndex = 104;
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(113, 32);
-            this.login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.login.Location = new System.Drawing.Point(151, 39);
+            this.login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.login.MaxLength = 30;
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(236, 20);
+            this.login.Size = new System.Drawing.Size(313, 22);
             this.login.TabIndex = 92;
             // 
             // Label14
             // 
             this.Label14.AutoSize = true;
             this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label14.Location = new System.Drawing.Point(387, 206);
-            this.Label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label14.Location = new System.Drawing.Point(516, 254);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(40, 20);
+            this.Label14.Size = new System.Drawing.Size(50, 25);
             this.Label14.TabIndex = 91;
             this.Label14.Text = "Płeć";
             // 
@@ -237,10 +235,9 @@
             // 
             this.Label15.AutoSize = true;
             this.Label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label15.Location = new System.Drawing.Point(387, 249);
-            this.Label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label15.Location = new System.Drawing.Point(516, 306);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(42, 20);
+            this.Label15.Size = new System.Drawing.Size(51, 25);
             this.Label15.TabIndex = 90;
             this.Label15.Text = "Rola";
             // 
@@ -248,10 +245,9 @@
             // 
             this.Label11.AutoSize = true;
             this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label11.Location = new System.Drawing.Point(387, 105);
-            this.Label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label11.Location = new System.Drawing.Point(516, 129);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(44, 20);
+            this.Label11.Size = new System.Drawing.Size(55, 25);
             this.Label11.TabIndex = 89;
             this.Label11.Text = "Ulica";
             // 
@@ -259,10 +255,9 @@
             // 
             this.Label12.AutoSize = true;
             this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label12.Location = new System.Drawing.Point(387, 144);
-            this.Label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label12.Location = new System.Drawing.Point(516, 177);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(109, 20);
+            this.Label12.Size = new System.Drawing.Size(136, 25);
             this.Label12.TabIndex = 88;
             this.Label12.Text = "Numer posesji";
             // 
@@ -270,10 +265,9 @@
             // 
             this.Label13.AutoSize = true;
             this.Label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label13.Location = new System.Drawing.Point(387, 180);
-            this.Label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label13.Location = new System.Drawing.Point(516, 222);
             this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(101, 20);
+            this.Label13.Size = new System.Drawing.Size(126, 25);
             this.Label13.TabIndex = 87;
             this.Label13.Text = "Numer lokalu";
             // 
@@ -281,10 +275,9 @@
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label7.Location = new System.Drawing.Point(18, 243);
-            this.Label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label7.Location = new System.Drawing.Point(24, 299);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(48, 20);
+            this.Label7.Size = new System.Drawing.Size(60, 25);
             this.Label7.TabIndex = 86;
             this.Label7.Text = "Email";
             // 
@@ -292,10 +285,9 @@
             // 
             this.Label8.AutoSize = true;
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label8.Location = new System.Drawing.Point(18, 277);
-            this.Label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label8.Location = new System.Drawing.Point(24, 341);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(62, 20);
+            this.Label8.Size = new System.Drawing.Size(78, 25);
             this.Label8.TabIndex = 85;
             this.Label8.Text = "Telefon";
             // 
@@ -303,10 +295,9 @@
             // 
             this.Label9.AutoSize = true;
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label9.Location = new System.Drawing.Point(387, 33);
-            this.Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label9.Location = new System.Drawing.Point(516, 41);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(98, 20);
+            this.Label9.Size = new System.Drawing.Size(124, 25);
             this.Label9.TabIndex = 84;
             this.Label9.Text = "Miejscowość";
             // 
@@ -314,10 +305,9 @@
             // 
             this.Label10.AutoSize = true;
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label10.Location = new System.Drawing.Point(387, 71);
-            this.Label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label10.Location = new System.Drawing.Point(516, 87);
             this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(107, 20);
+            this.Label10.Size = new System.Drawing.Size(135, 25);
             this.Label10.TabIndex = 83;
             this.Label10.Text = "Kod pocztowy";
             // 
@@ -325,10 +315,9 @@
             // 
             this.Label5.AutoSize = true;
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label5.Location = new System.Drawing.Point(18, 175);
-            this.Label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label5.Location = new System.Drawing.Point(24, 215);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(48, 20);
+            this.Label5.Size = new System.Drawing.Size(61, 25);
             this.Label5.TabIndex = 82;
             this.Label5.Text = "Pesel";
             // 
@@ -336,10 +325,9 @@
             // 
             this.Label6.AutoSize = true;
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label6.Location = new System.Drawing.Point(18, 210);
-            this.Label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label6.Location = new System.Drawing.Point(24, 258);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(118, 20);
+            this.Label6.Size = new System.Drawing.Size(144, 25);
             this.Label6.TabIndex = 81;
             this.Label6.Text = "Data urodzenia";
             // 
@@ -347,10 +335,9 @@
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label3.Location = new System.Drawing.Point(18, 103);
-            this.Label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label3.Location = new System.Drawing.Point(24, 127);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(39, 20);
+            this.Label3.Size = new System.Drawing.Size(48, 25);
             this.Label3.TabIndex = 80;
             this.Label3.Text = "Imie";
             // 
@@ -358,10 +345,9 @@
             // 
             this.Label4.AutoSize = true;
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label4.Location = new System.Drawing.Point(18, 139);
-            this.Label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label4.Location = new System.Drawing.Point(24, 171);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(76, 20);
+            this.Label4.Size = new System.Drawing.Size(96, 25);
             this.Label4.TabIndex = 79;
             this.Label4.Text = "Nazwisko";
             // 
@@ -369,10 +355,9 @@
             // 
             this.Label2.AutoSize = true;
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label2.Location = new System.Drawing.Point(18, 69);
-            this.Label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label2.Location = new System.Drawing.Point(24, 85);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(51, 20);
+            this.Label2.Size = new System.Drawing.Size(62, 25);
             this.Label2.TabIndex = 78;
             this.Label2.Text = "Hasło";
             // 
@@ -380,16 +365,15 @@
             // 
             this.Label1.AutoSize = true;
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label1.Location = new System.Drawing.Point(18, 32);
-            this.Label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Label1.Location = new System.Drawing.Point(24, 39);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(48, 20);
+            this.Label1.Size = new System.Drawing.Size(60, 25);
             this.Label1.TabIndex = 77;
             this.Label1.Text = "Login";
             // 
             // UserEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Anuluj);
             this.Controls.Add(this.Zapisz);
@@ -423,8 +407,9 @@
             this.Controls.Add(this.Label4);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UserEdit";
-            this.Size = new System.Drawing.Size(844, 818);
+            this.Size = new System.Drawing.Size(1125, 1007);
             this.ResumeLayout(false);
             this.PerformLayout();
 

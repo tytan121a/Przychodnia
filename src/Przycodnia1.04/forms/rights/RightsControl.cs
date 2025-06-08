@@ -79,6 +79,11 @@ namespace Przychodnia.forms
 
         private void UsersWithRightsButton_Click(object sender, EventArgs e)
         {
+            if (this.RightsDataTable.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego uprawnienia.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var val = this.RightsDataTable.SelectedRows[0].Cells[0].Value.ToString();
             var name = this.RightsDataTable.SelectedRows[0].Cells[2].Value.ToString();
             if (val == null) return;
