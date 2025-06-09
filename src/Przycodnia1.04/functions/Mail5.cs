@@ -19,15 +19,15 @@ namespace Przychodnia.functions
                 try
                 {
                     MailMessage mail = new MailMessage();
-                    mail.From = new MailAddress("przychodnia_v4@wp.pl", "Przychodnia");
+                    mail.From = new MailAddress("jankowalskitest32@wp.pl", "Przychodnia");
                     mail.To.Add(recipient);
                     mail.Subject = subject;
                     mail.Body = body;
 
                     SmtpClient smtp = new SmtpClient("smtp.wp.pl");
                     smtp.Port = 587;
-                smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential("przychodnia_v4@wp.pl", "Piesek123!");
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = new NetworkCredential("jankowalskitest32@wp.pl", "Piesek123!");
 
                     smtp.Send(mail);
                 }
@@ -40,7 +40,5 @@ namespace Przychodnia.functions
                    MessageBox.Show("Inny błąd: " + ex.ToString(), "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
         }
-
-
-}
+    }
 }
