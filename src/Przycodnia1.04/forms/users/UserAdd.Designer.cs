@@ -64,6 +64,7 @@
             // 
             // Anuluj
             // 
+            this.Anuluj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Anuluj.Location = new System.Drawing.Point(924, 437);
             this.Anuluj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Anuluj.Name = "Anuluj";
@@ -75,6 +76,7 @@
             // 
             // Zapisz
             // 
+            this.Zapisz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Zapisz.Location = new System.Drawing.Point(812, 437);
             this.Zapisz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Zapisz.Name = "Zapisz";
@@ -227,7 +229,7 @@
             this.Label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label14.Location = new System.Drawing.Point(535, 292);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(40, 20);
+            this.Label14.Size = new System.Drawing.Size(50, 25);
             this.Label14.TabIndex = 71;
             this.Label14.Text = "Płeć";
             // 
@@ -237,7 +239,7 @@
             this.Label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label15.Location = new System.Drawing.Point(535, 337);
             this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(42, 20);
+            this.Label15.Size = new System.Drawing.Size(51, 25);
             this.Label15.TabIndex = 70;
             this.Label15.Text = "Rola";
             // 
@@ -247,7 +249,7 @@
             this.Label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label11.Location = new System.Drawing.Point(535, 162);
             this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(44, 20);
+            this.Label11.Size = new System.Drawing.Size(55, 25);
             this.Label11.TabIndex = 69;
             this.Label11.Text = "Ulica";
             // 
@@ -257,7 +259,7 @@
             this.Label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label12.Location = new System.Drawing.Point(535, 208);
             this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(109, 20);
+            this.Label12.Size = new System.Drawing.Size(136, 25);
             this.Label12.TabIndex = 68;
             this.Label12.Text = "Numer posesji";
             // 
@@ -267,7 +269,7 @@
             this.Label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label13.Location = new System.Drawing.Point(535, 254);
             this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(101, 20);
+            this.Label13.Size = new System.Drawing.Size(126, 25);
             this.Label13.TabIndex = 67;
             this.Label13.Text = "Numer lokalu";
             // 
@@ -277,7 +279,7 @@
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label7.Location = new System.Drawing.Point(38, 332);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(48, 20);
+            this.Label7.Size = new System.Drawing.Size(60, 25);
             this.Label7.TabIndex = 66;
             this.Label7.Text = "Email";
             // 
@@ -287,7 +289,7 @@
             this.Label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label8.Location = new System.Drawing.Point(38, 374);
             this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(62, 20);
+            this.Label8.Size = new System.Drawing.Size(78, 25);
             this.Label8.TabIndex = 65;
             this.Label8.Text = "Telefon";
             // 
@@ -297,7 +299,7 @@
             this.Label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label9.Location = new System.Drawing.Point(535, 75);
             this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(98, 20);
+            this.Label9.Size = new System.Drawing.Size(124, 25);
             this.Label9.TabIndex = 64;
             this.Label9.Text = "Miejscowość";
             // 
@@ -307,7 +309,7 @@
             this.Label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label10.Location = new System.Drawing.Point(535, 120);
             this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(107, 20);
+            this.Label10.Size = new System.Drawing.Size(135, 25);
             this.Label10.TabIndex = 63;
             this.Label10.Text = "Kod pocztowy";
             // 
@@ -317,7 +319,7 @@
             this.Label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label5.Location = new System.Drawing.Point(38, 249);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(48, 20);
+            this.Label5.Size = new System.Drawing.Size(61, 25);
             this.Label5.TabIndex = 62;
             this.Label5.Text = "Pesel";
             // 
@@ -327,7 +329,7 @@
             this.Label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label6.Location = new System.Drawing.Point(38, 292);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(118, 20);
+            this.Label6.Size = new System.Drawing.Size(144, 25);
             this.Label6.TabIndex = 61;
             this.Label6.Text = "Data urodzenia";
             // 
@@ -337,7 +339,7 @@
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label3.Location = new System.Drawing.Point(38, 160);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(39, 20);
+            this.Label3.Size = new System.Drawing.Size(48, 25);
             this.Label3.TabIndex = 60;
             this.Label3.Text = "Imie";
             // 
@@ -347,7 +349,7 @@
             this.Label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label4.Location = new System.Drawing.Point(38, 204);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(76, 20);
+            this.Label4.Size = new System.Drawing.Size(96, 25);
             this.Label4.TabIndex = 59;
             this.Label4.Text = "Nazwisko";
             // 
@@ -357,7 +359,7 @@
             this.Label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label2.Location = new System.Drawing.Point(38, 118);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(51, 20);
+            this.Label2.Size = new System.Drawing.Size(62, 25);
             this.Label2.TabIndex = 58;
             this.Label2.Text = "Hasło";
             // 
@@ -367,7 +369,7 @@
             this.Label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Label1.Location = new System.Drawing.Point(38, 73);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(48, 20);
+            this.Label1.Size = new System.Drawing.Size(60, 25);
             this.Label1.TabIndex = 57;
             this.Label1.Text = "Login";
             // 

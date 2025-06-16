@@ -44,7 +44,7 @@
             // 
             this.ForgotUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ForgotUsers.Location = new System.Drawing.Point(53, 666);
-            this.ForgotUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ForgotUsers.Margin = new System.Windows.Forms.Padding(4);
             this.ForgotUsers.Name = "ForgotUsers";
             this.ForgotUsers.Size = new System.Drawing.Size(233, 42);
             this.ForgotUsers.TabIndex = 16;
@@ -56,7 +56,7 @@
             // 
             this.UserDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.UserDataButton.Location = new System.Drawing.Point(852, 666);
-            this.UserDataButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UserDataButton.Margin = new System.Windows.Forms.Padding(4);
             this.UserDataButton.Name = "UserDataButton";
             this.UserDataButton.Size = new System.Drawing.Size(167, 42);
             this.UserDataButton.TabIndex = 15;
@@ -73,7 +73,7 @@
             this.UsersList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.UsersList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersList.Location = new System.Drawing.Point(53, 146);
-            this.UsersList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UsersList.Margin = new System.Windows.Forms.Padding(5);
             this.UsersList.MultiSelect = false;
             this.UsersList.Name = "UsersList";
             this.UsersList.ReadOnly = true;
@@ -140,6 +140,7 @@
             // 
             // ForceRecoverPassButton
             // 
+            this.ForceRecoverPassButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ForceRecoverPassButton.Location = new System.Drawing.Point(708, 665);
             this.ForceRecoverPassButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ForceRecoverPassButton.Name = "ForceRecoverPassButton";
@@ -162,7 +163,7 @@
             this.Controls.Add(this.addUsers);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchText);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsersControl";
             this.Size = new System.Drawing.Size(1092, 736);
             ((System.ComponentModel.ISupportInitialize)(this.UsersList)).EndInit();

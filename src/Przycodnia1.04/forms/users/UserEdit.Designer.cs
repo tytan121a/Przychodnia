@@ -64,6 +64,7 @@
             // 
             // Anuluj
             // 
+            this.Anuluj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Anuluj.Location = new System.Drawing.Point(891, 398);
             this.Anuluj.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Anuluj.Name = "Anuluj";
@@ -75,6 +76,7 @@
             // 
             // Zapisz
             // 
+            this.Zapisz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Zapisz.Location = new System.Drawing.Point(779, 398);
             this.Zapisz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Zapisz.Name = "Zapisz";
@@ -407,7 +409,7 @@
             this.Controls.Add(this.Label4);
             this.Controls.Add(this.Label2);
             this.Controls.Add(this.Label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserEdit";
             this.Size = new System.Drawing.Size(1125, 1007);
             this.ResumeLayout(false);

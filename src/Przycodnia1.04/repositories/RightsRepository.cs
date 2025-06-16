@@ -148,7 +148,7 @@ namespace Przychodnia.repositories
                 {
                     conn.Open();
 
-                    // Tworzymy parametry @id0, @id1, ...
+                    // Dynamiczne parametry  IN (@id0, @id1, @id2, ...)
                     string inClause = string.Join(",", idsUprawnien.Select((id, index) => $"@id{index}"));
                     string sql = $@"
                 SELECT IdRoli

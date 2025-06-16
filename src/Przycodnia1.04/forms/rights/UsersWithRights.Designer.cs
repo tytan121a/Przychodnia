@@ -86,7 +86,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsersWithRights";
             this.Size = new System.Drawing.Size(909, 595);
-            this.Load += new System.EventHandler(this.UsersWithRights_Load);
             ((System.ComponentModel.ISupportInitialize)(this.listaUzytkownikow)).EndInit();
             this.ResumeLayout(false);
 

@@ -64,9 +64,6 @@ namespace Przychodnia.forms
             }
         }
 
-        private void UsersWithRights_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }
